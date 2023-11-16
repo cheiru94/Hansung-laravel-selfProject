@@ -15,10 +15,15 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 bg-cover bg-[50%_50%]" style="background-image: url(/imgs/login_img.png)">
+          
+          <div class="w-[100%]] h-[97px] [text-shadow:0px_4px_4px_#00000040] [font-family:'Inter-Bold',Helvetica] font-bold text-[85px] whitespace-nowrap relative text-white tracking-[0] leading-[normal]">
+            한성 건축사사무소
+          </div>
             <div>
                 <a href="/">
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    
                 </a>
             </div>
 
