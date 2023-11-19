@@ -9,15 +9,17 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         {{-- 테일윈드 css  --}}
         @vite('resources/css/app.css')
-        <style>
-        </style>
+        
+        
+        {{-- fontawesome --}}
+        <script src="https://kit.fontawesome.com/ff316f86f0.js" crossorigin="anonymous"></script>
     </head>
 
 
     <body class="antialiased">  
       <x-nav-top></x-nav-top>
 
-      
+
  
     {{-- 🟢 2. 메인 이미지 --}}
     <div class="flex flex-col h-[600px] items-center justify-center gap-[24px] px-[37px] py-0 relative bg-[url(/imgs/main_img.png)] bg-cover bg-[50%_50%]" style="background-image: url(/imgs/main_img2.png)">
@@ -81,6 +83,30 @@
                   
                 </span>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    {{-- 지도 --}}
+    <section class="text-gray-600 body-font relative">
+      <div class="container px-5 pb-24 mx-auto flex sm:flex-nowrap flex-wrap">
+        <div class="lg:w-full h-[500px] md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+          <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=ko&amp;q=175+Seongan-ro,+Jung-gu,+Ulsan,+South+Korea&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" style="filter:  opacity(0.8);"></iframe>
+          <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+            <div class="lg:w-1/2 px-6">
+              <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
+              <p class="mt-1">
+                울산광역시 중구 성안로 175</p>
+            </div>
+            <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+              <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
+              <a class="text-green-500 leading-relaxed">hansung4003@naver.com</a>
+              <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
+              <p class="leading-relaxed">010-3842-4003</p>
             </div>
           </div>
         </div>
