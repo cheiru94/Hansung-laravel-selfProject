@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          신규 작성
+          상세화면
       </h2>
   </x-slot>
 
@@ -13,9 +13,7 @@
 
                 {{-- 🟢 Contact Us 내용 🟢 --}}
                 <section class="text-gray-600 body-font relative">
-
-                  <form method="POST" action="{{route('contacts.store')}}">
-                    @csrf
+                  {{$contact->id}}{{$contact->name}}
                     <div class="container px-5  mx-auto">
                       <div class="lg:w-1/2 md:w-2/3 mx-auto">
                         <div class="flex flex-wrap -m-2">
@@ -97,7 +95,7 @@
                         </div>
                       </div>
                     </div>
-                  </form>
+               
                   
                 </section>
 
