@@ -12,7 +12,7 @@ class ContactFormController extends Controller
     public function index()
     {
         // 폴더명.파일명
-        return view('contacts.index');
+        return view('contacts.index'); 
     }
 
     /**
@@ -20,7 +20,8 @@ class ContactFormController extends Controller
      */
     public function create()
     {
-        //
+         // 폴더명.파일명
+        return view('contacts.create');
     }
 
     /**
