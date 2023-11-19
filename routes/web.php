@@ -31,6 +31,7 @@ Route::prefix('contacts')   // 1. url주소
      ->group(function(){  
       
           Route::get('/',[ContactFormController::class,'index'])->name('index'); // 
+          Route::get('/create',[ContactFormController::class,'create'])->name('cc'); // 
 
      });
 
