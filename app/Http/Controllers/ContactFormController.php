@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactForm;
 use Illuminate\Http\Request;
 
 class ContactFormController extends Controller
@@ -11,8 +12,10 @@ class ContactFormController extends Controller
      */
     public function index()
     {
+      $contacts = ContactForm::select('id','name','title','region','created_at')->get();
+
         // 폴더명.파일명
-        return view('contacts.index'); 
+        return view('contacts.index',compact('contacts')); 
     }
 
     /**
@@ -25,11 +28,21 @@ class ContactFormController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. 
      */
-    public function store(Request $request)
+    public function store(Request $request) // store 메소드에는 Request 객체가 들어온다
     {
-        //
+        // dd($request);
+        ContactForm::create([
+          'title' => $request->title,
+          'name' => $request->name,
+          'email' => $request->email,
+          'type' => $request->type,
+          'region' => $request->region,
+          'contact' => $request->contact,
+      ]);
+
+        return to_route('contacts.index');
     }
 
     /**
@@ -38,6 +51,8 @@ class ContactFormController extends Controller
     public function show(string $id)
     {
         //
+        $contact = ContactForm::find($id);
+        return view('contacts.show',compact('contact'));
     }
 
     /**
