@@ -29,9 +29,9 @@ Route::prefix('contacts')   // 1. url주소
      ->name('contacts.')    // 3. 라우터 이름 
      ->controller(ContactFormController::class)  // 3. 컨트롤러
      ->group(function(){  
-      
           Route::get('/',[ContactFormController::class,'index'])->name('index'); // 
-          Route::get('/create',[ContactFormController::class,'create'])->name('cc'); // 
+          Route::get('/create',[ContactFormController::class,'create'])->name('create'); // 
+          Route::post('/store',[ContactFormController::class,'store'])->name('store'); // 
 
      });
 
