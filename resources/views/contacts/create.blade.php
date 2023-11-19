@@ -14,7 +14,7 @@
                 {{-- 🟢 Contact Us 내용 🟢 --}}
                 <section class="text-gray-600 body-font relative">
 
-                  <form method="POST" action="">
+                  <form method="POST" action="{{route('contacts.store')}}">
                     @csrf
                     <div class="container px-5  mx-auto">
                       <div class="lg:w-1/2 md:w-2/3 mx-auto">
@@ -41,19 +41,17 @@
                               <input type="email" id="email" name="email" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                           </div>
-                          
                           {{-- 4. type --}}
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
-                              <label for="type" class="leading-7 text-lg text-gray-600" >종류</label><br>
-                              <input type="radio" name="house" > 주택
-                              <input type="radio" name="villa" class="ml-[50px]" > 빌라
-                              <input type="radio" name="house" class="ml-[50px]" > 아파트
-                              <input type="radio" name="shop" class="ml-[50px]" > 상가
-                              <input type="radio" name="supervision" class="ml-[50px]" > 감리
+                              <label  class="leading-7 text-lg text-gray-600" >종류</label><br>
+                              <input type="radio" name="type" value="house" > 주택
+                              <input type="radio" name="type" value="villa" class="ml-[50px]" > 빌라
+                              <input type="radio" name="type" value="apartment" class="ml-[50px]" > 아파트
+                              <input type="radio" name="type" value="shop" class="ml-[50px]" > 상가
+                              <input type="radio" name="type" value="supervision" class="ml-[50px]" > 감리
                             </div>
                           </div>
-                          
                           {{-- 5. region --}}
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
@@ -64,6 +62,7 @@
                                 <option value="bukku">북구</option>
                                 <option value="donggu">동구</option>
                                 <option value="ulzugun">울주군</option>
+                                <option value="korea">그 외 지역</option>
                               </select>
                             </div>
                           </div>
