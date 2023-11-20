@@ -23,7 +23,7 @@ Route::get('/', function () {
 // 🟢 작성 ↓↓↓↓↓↓↓↓↓↓↓↓
 // Route::get('contacts',[ContactFormController::class,'index'])->name('contacts.index');
 
-
+/* 1. /contacts */
 Route::prefix('contacts')   // 1. url주소
      ->middleware(['auth']) // 2. 미들웨어 : 로그인 하지 않으면 페이지에 접속할 수 없음 
      ->name('contacts.')    // 3. 라우터 이름 
@@ -37,6 +37,12 @@ Route::prefix('contacts')   // 1. url주소
           Route::put('/{id}','update')->name('update'); // 
           Route::delete('/{id}destroy','destroy')->name('destroy'); // 
      });
+
+/* 2. /greeting  */
+Route::get('/greeting', function () {
+  return view('comunity.greeting');
+});
+
 
 
 // 🟢 작성 ↑↑↑↑↑↑↑↑↑↑↑↑
