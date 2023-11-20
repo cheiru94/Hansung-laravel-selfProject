@@ -79,10 +79,26 @@
                       
 
                           {{-- 8. button --}}
-                          <div class="p-2 w-full mb-[10px]">
-                            <button class="flex mx-auto text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"><a href="{{route('contacts.index')}}">돌아가기</a></button>
+                          <div class=" w-full flex justify-center ">
+                            {{-- 8.1 뒤로가기 --}}
+                            <div class="p-2 w-full mb-[10px]">
+                              <button class="flex mx-auto text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"><a href="{{route('contacts.index')}}">이전</a></button>
+                            </div>
+                            {{-- 8.2 수정하기 --}}
+                            <div class="p-2 w-full mb-[10px]">
+                              <form method="get" action="{{route('contacts.edit',['id' => $contact->id])}}">
+                                <button class="flex mx-auto text-white bg-pink-500 border-0 py-2 px-8 focus:outline-none hover:bg-pink-600 rounded text-lg">수정</button>
+                              </form>
+                            </div>
+                            {{-- 8.3 삭제하기 --}}
+                            <div class="p-2 w-full mb-[10px]">
+                              <form id="delete_{{$contact->id}}" method="post" action="{{route('contacts.destroy',['id' => $contact->id])}}">
+                                @csrf
+                                @method('delete')
+                                <button data-id="{{ $contact->id }}" onclick="deletePost(this)" class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">삭제</button>
+                              </form>
+                            </div>
                           </div>
-                          
                         </div>
                       </div>
                     </div>
@@ -94,5 +110,17 @@
           </div>
       </div>
   </div>
+
+  {{-- 삭제시 자바스크립트 --}}
+  <script>
+    function deletePost(e) {
+      'use strict'
+      if (confirm('정말로 삭제 하시겠습니까?')) {
+        document.getElementById('delete_'+e.dataset.id).submit()  /*  submit으로 실행  */
+      }
+    }
+
+  </script>
+
 </x-app-layout>
  
