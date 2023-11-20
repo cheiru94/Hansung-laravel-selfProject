@@ -52,7 +52,49 @@ class ContactFormController extends Controller
     {
         //
         $contact = ContactForm::find($id);
-        return view('contacts.show',compact('contact'));
+        // dd($contact->type);
+       
+        // 4. type
+        switch ($contact->type ) {
+          case 'house':
+            $type = '주택';
+            break;
+          case 'villa':
+            $type = '빌라';
+            break;
+          case 'apartment':
+            $type = '아파트';
+            break;
+          case 'shop':
+            $type = '상가';
+            break;
+          case 'supervision':
+            $type = '감리';
+            break;
+        }
+        // 5. region
+        switch ($contact->region ) {
+          case 0:
+            $region = '남구';
+            break;
+          case 1:
+            $region = '중구';
+            break;
+          case 2:
+            $region = '북구';
+            break;
+          case 3:
+            $region = '동구';
+            break;
+          case 4:
+            $region = '울주군';
+            break;
+          case 5:
+            $region = '그 외 지역';
+            break;
+        }
+
+        return view('contacts.show',compact('contact','type','region'));
     }
 
     /**
