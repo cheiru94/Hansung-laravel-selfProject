@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactForm;
 use Illuminate\Http\Request;
-
+use App\Services\CheckFormService;
+use App\Http\Requests\StoreContactRequest;
+use App\Http\Requests\UpdateContactRequest;
 class ContactFormController extends Controller
 {
     /**
@@ -30,7 +32,7 @@ class ContactFormController extends Controller
     /**
      * Store a newly created resource in storage. 
      */
-    public function store(Request $request) // store 메소드에는 Request 객체가 들어온다
+    public function store(StoreContactRequest $request) // store 메소드에는 Request 객체가 들어온다
     {
         // dd($request);
         ContactForm::create([
@@ -54,45 +56,12 @@ class ContactFormController extends Controller
         $contact = ContactForm::find($id);
         // dd($contact->type);
        
-        // 4. type
-        switch ($contact->type ) {
-          case 'house':
-            $type = '주택';
-            break;
-          case 'villa':
-            $type = '빌라';
-            break;
-          case 'apartment':
-            $type = '아파트';
-            break;
-          case 'shop':
-            $type = '상가';
-            break;
-          case 'supervision':
-            $type = '감리';
-            break;
-        }
-        // 5. region
-        switch ($contact->region ) {
-          case 0:
-            $region = '남구';
-            break;
-          case 1:
-            $region = '중구';
-            break;
-          case 2:
-            $region = '북구';
-            break;
-          case 3:
-            $region = '동구';
-            break;
-          case 4:
-            $region = '울주군';
-            break;
-          case 5:
-            $region = '그 외 지역';
-            break;
-        }
+        // 4. type -> App/Services/CheckFormService
+        $type = CheckFormService::checkType($contact);
+        
+        // 5. region -> App/Services/CheckFormService
+        $region = CheckFormService::checkRegion($contact);
+        
 
         return view('contacts.show',compact('contact','type','region'));
     }
@@ -112,7 +81,7 @@ class ContactFormController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateContactRequest $request, string $id)
     {
         //
         $contact = ContactForm::find($id);
