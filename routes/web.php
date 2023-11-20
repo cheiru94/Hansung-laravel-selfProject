@@ -33,7 +33,9 @@ Route::prefix('contacts')   // 1. url주소
           Route::get('/create','create')->name('create'); // 
           Route::post('/store','store')->name('store'); // 
           Route::get('/{id}','show')->name('show'); // 
-
+          Route::get('/{id}/edit','edit')->name('edit'); // 
+          Route::put('/{id}','update')->name('update'); // 
+          Route::delete('/{id}destroy','destroy')->name('destroy'); // 
      });
 
 
