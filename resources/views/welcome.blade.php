@@ -7,9 +7,11 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        {{-- 테일윈드 css  --}}
-        @vite('resources/css/app.css')
-        
+
+
+     
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         
         {{-- fontawesome --}}
         <script src="https://kit.fontawesome.com/ff316f86f0.js" crossorigin="anonymous"></script>
@@ -17,6 +19,9 @@
 
 
     <body class="antialiased">  
+     
+
+    {{-- 🟢 1. top --}}
       <x-nav-top></x-nav-top>
 
 
@@ -159,9 +164,6 @@
       </div>
 
     </footer>
-
-
-     
 
       
     </body>
