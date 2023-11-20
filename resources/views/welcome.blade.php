@@ -40,9 +40,9 @@
     {{-- 🟢  3. 설계 ・ 건축 법령　・ 감리   --}}
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-col text-center w-full mb-20">
+        <div class="flex flex-col text-center w-full mb-10">
           <h1 class="text-2xl font-medium title-font mb-4 text-gray-900">Business Area</h1>
-          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">사업분야를 소개합니다.</p>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">사업분야</p>
         </div>
         <div class="flex flex-wrap -m-4 justify-center ">
           <div class="p-4 lg:w-1/4 md:w-1/2">
@@ -51,7 +51,7 @@
               <div class="w-full">
                 <h2 class="title-font font-medium text-3xl text-gray-900">설계</h2>
                 <h3 class="text-gray-500 mb-3">Design</h3>
-                <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                {{-- <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p> --}}
                 <span class="inline-flex">
                   
                 </span>
@@ -65,7 +65,7 @@
               <div class="w-full">
                 <h2 class="title-font font-medium text-3xl text-gray-900">감리</h2>
                 <h3 class="text-gray-500 mb-3">Supervision</h3>
-                <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                {{-- <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p> --}}
                 <span class="inline-flex">
                   
                 </span>
@@ -78,7 +78,7 @@
               <div class="w-full">
                 <h2 class="title-font font-medium text-3xl text-gray-900">건축 법령 상담</h2>
                 <h3 class="text-gray-500 mb-3">Consultation</h3>
-                <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                {{-- <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p> --}}
                 <span class="inline-flex">
                   
                 </span>
@@ -91,21 +91,27 @@
 
     
 
-    {{-- 지도 --}}
+    {{-- 🟢 지도 --}}
     <section class="text-gray-600 body-font relative">
-      <div class="container px-5 pb-24 mx-auto flex sm:flex-nowrap flex-wrap">
+      {{-- 상단 제목 --}}
+      <div class="flex flex-col text-center w-full mb-10">
+        <h1 class="text-2xl font-medium title-font mb-4 text-gray-900">Directions</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">찾아 오시는 길</p>
+      </div>
+      <div class="container px-5 pb-24 mx-auto fle justify-center sm:flex-nowrap flex-wrap">
         <div class="lg:w-full h-[500px] md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
           <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=ko&amp;q=175+Seongan-ro,+Jung-gu,+Ulsan,+South+Korea&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" style="filter:  opacity(0.8);"></iframe>
           <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+            {{-- 좌측 상단 div --}}
             <div class="lg:w-1/2 px-6">
-              <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
-              <p class="mt-1">
-                울산광역시 중구 성안로 175</p>
+              <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">주소</h2>
+              <p class="mt-1">울산광역시 중구 성안로 175</p>
             </div>
+            {{-- 좌측 하단 div --}}
             <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
-              <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
-              <a class="text-green-500 leading-relaxed">hansung4003@naver.com</a>
-              <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
+              <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">이메일</h2>
+              <a class="text-green-500 leading-relaxed" href="mailto:hansung4003@naver.com">hansung4003@naver.com</a>
+              <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">전화번호</h2>
               <p class="leading-relaxed">010-3842-4003</p>
             </div>
           </div>

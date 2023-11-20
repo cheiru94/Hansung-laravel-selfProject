@@ -34,7 +34,32 @@
                               <td class="border-t-2 border-gray-200 px-4 py-3">{{$contact->id}}</td>
                               <td class="border-t-2 border-gray-200 px-4 py-3">{{$contact->name}}</td>
                               <td class="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900"><a href="{{ route('contacts.show' ,['id'=>$contact->id])}}">{{$contact->title}}</a></td>
-                              <td class="border-t-2 border-gray-200 px-4 py-3 ">{{$contact->region}}</td>
+                              <td class="border-t-2 border-gray-200 px-4 py-3 ">
+                                @php
+                                  $region = '';
+                                  switch ($contact->region) {
+                                    case 0:
+                                      $region = '남구';
+                                      break;
+                                    case 1:
+                                      $region = '중구';
+                                      break;
+                                    case 2:
+                                      $region = '북구';
+                                      break;
+                                    case 3:
+                                      $region = '동구';
+                                      break;
+                                    case 4:
+                                      $region = '울주군';
+                                      break;
+                                    case 5:
+                                      $region = '그 외 지역';
+                                      break;
+                                  }
+                                @endphp
+                                {{ $region }}  
+                              </td>
                               <td class="border-t-2 border-gray-200 px-4 py-3">{{$contact->created_at}}</td>
                             </tr>
                         @endforeach

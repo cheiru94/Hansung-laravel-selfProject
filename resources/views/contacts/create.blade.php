@@ -31,7 +31,7 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="name" class="leading-7 text-lg text-gray-600">이름</label>
-                              <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                              <input required type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                           </div>
                           {{-- 3. email --}}
@@ -45,11 +45,11 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label  class="leading-7 text-lg text-gray-600" >종류</label><br>
-                              <input type="radio" name="type" value="house" > 주택
-                              <input type="radio" name="type" value="villa" class="ml-[50px]" > 빌라
-                              <input type="radio" name="type" value="apartment" class="ml-[50px]" > 아파트
-                              <input type="radio" name="type" value="shop" class="ml-[50px]" > 상가
-                              <input type="radio" name="type" value="supervision" class="ml-[50px]" > 감리
+                              <input type="radio" name="type" value="house" required> 주택
+                              <input type="radio" name="type" value="villa" class="ml-[50px]" required> 빌라
+                              <input type="radio" name="type" value="apartment" class="ml-[50px]" required> 아파트
+                              <input type="radio" name="type" value="shop" class="ml-[50px]" required> 상가
+                              <input type="radio" name="type" value="supervision" class="ml-[50px]" required> 감리
                             </div>
                           </div>
                           {{-- 5. region --}}
@@ -57,12 +57,12 @@
                             <div class="relative">
                               <label for="region" class="leading-7 text-lg text-gray-600">지역선택 (울산광역시)</label><br>
                               <select name="region">
-                                <option value="남구">남구</option>
-                                <option value="중구">중구</option>
-                                <option value="북구">북구</option>
-                                <option value="동구">동구</option>
-                                <option value="울주군">울주군</option>
-                                <option value="그 외">그 외 지역</option>
+                                <option value="0">남구</option>
+                                <option value="1">중구</option>
+                                <option value="2">북구</option>
+                                <option value="3">동구</option>
+                                <option value="4">울주군</option>
+                                <option value="5">그 외 지역</option>
                                 {{-- <option value="namgu">남구</option>
                                 <option value="junggu">중구</option>
                                 <option value="bukku">북구</option>
@@ -77,7 +77,7 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="contact" class="leading-7 text-lg text-gray-600">문의 내용</label>
-                              <textarea id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                              <textarea required id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                             </div>
                           </div>
                           
@@ -85,7 +85,7 @@
                           <div class="p-2 w-full mb-[10px] text-center">
                             <div class="relative">
                               정보 제공 동의 &nbsp;&nbsp;
-                              <input type="checkbox" id="caution" name="caution" class=" mb-[4px]">
+                              <input required type="checkbox" id="caution" name="caution" class=" mb-[4px]">
                             </div>
                           </div>
 
