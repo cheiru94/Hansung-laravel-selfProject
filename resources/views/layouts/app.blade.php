@@ -17,9 +17,12 @@
     
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+            
+          <x-nav-top></x-nav-top>
+          {{-- 원래 네비게이션바 --}}
+          {{-- @include('layouts.navigation') --}}
 
-            <!-- Page Heading -->
+            <!-- Page Heading : 상단 nav 부분 -->
             @if (isset($header))
                 <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -28,7 +31,7 @@
                 </header>
             @endif
 
-            <!-- Page Content -->
+            <!-- Page Content : 게시판 내용 부분 -->
             <main>
                 {{ $slot }}
             </main>
