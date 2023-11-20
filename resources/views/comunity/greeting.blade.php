@@ -25,7 +25,7 @@
     {{-- 좌측 이미지 --}}
     <div class=" px-[80px] self-stretch justify-center items-center gap-2.5 flex">
       <div class="w-[574px] h-[753px] rounded-[13px] justify-center items-center flex">
-        <img class="w-[579px] h-[752px] rounded-lg" src="/imgs/father_img.png" />
+        <img class="w-[579px] h-[752px] rounded-lg" src="/imgs/president/father_img.png" />
       </div>
     </div>
     {{-- 우측 글자 --}}

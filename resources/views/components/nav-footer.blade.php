@@ -1,4 +1,4 @@
-<footer class="text-gray-600 body-font fixed bottom-0 left-0 right-0">
+<footer class="text-gray-600 body-font ">
   <div class="bg-gray-100">
     <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
       <img class="w-10 h-10  " src="/imgs/logo/hansung-g.png" alt="안뜸">
