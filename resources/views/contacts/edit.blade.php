@@ -12,6 +12,7 @@
               <div class="p-6 text-gray-900">
 
                 {{-- 🟢 Contact Us 내용 🟢 --}}
+                <x-auth-validation-errors class="mb-4" :errors="$errors"/>
                 <section class="text-gray-600 body-font relative">
 
                   <form method="POST" action="{{route('contacts.update',['id' =>$contact->id ] )}}">
@@ -25,7 +26,7 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="title" class="leading-7 text-lg text-gray-600">문의 사항</label>
-                              <input type="text" id="title" name="title" value="{{$contact->title}}"  required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                              <input type="text" id="title" name="title" value="{{$contact->title}}"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                           </div>
                           
@@ -33,7 +34,7 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="name" class="leading-7 text-lg text-gray-600">이름</label>
-                              <input required type="text" id="name" name="name" value="{{$contact->name}}"  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                              <input  type="text" id="name" name="name" value="{{$contact->name}}"  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                           </div>
 
@@ -41,7 +42,7 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="email" class="leading-7 text-lg text-gray-600">e-mail</label>
-                              <input type="email" id="email" name="email" required value="{{$contact->email}}"  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                              <input type="email" id="email" name="email"  value="{{$contact->email}}"  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                           </div>
 
@@ -49,11 +50,11 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label  class="leading-7 text-lg text-gray-600" >종류</label><br>
-                              <input type="radio" name="type" value="house" required @if ($contact->type === "house") checked @endif > 주택
-                              <input type="radio" name="type" value="villa" class="ml-[50px]" required @if ($contact->type === "villa") checked @endif > 빌라
-                              <input type="radio" name="type" value="apartment" class="ml-[50px]" required @if ($contact->type === "apartment") checked @endif > 아파트
-                              <input type="radio" name="type" value="shop" class="ml-[50px]" required @if ($contact->type === "shop") checked @endif > 상가
-                              <input type="radio" name="type" value="supervision" class="ml-[50px]" required @if ($contact->type === "supervision") checked @endif > 감리
+                              <input type="radio" name="type" value="house"  @if ($contact->type === "house") checked @endif > 주택
+                              <input type="radio" name="type" value="villa" class="ml-[50px]"  @if ($contact->type === "villa") checked @endif > 빌라
+                              <input type="radio" name="type" value="apartment" class="ml-[50px]"  @if ($contact->type === "apartment") checked @endif > 아파트
+                              <input type="radio" name="type" value="shop" class="ml-[50px]"  @if ($contact->type === "shop") checked @endif > 상가
+                              <input type="radio" name="type" value="supervision" class="ml-[50px]"  @if ($contact->type === "supervision") checked @endif > 감리
                             </div>
                           </div>
 
@@ -77,7 +78,7 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="contact" class="leading-7 text-lg text-gray-600">문의 내용</label>
-                              <textarea required id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{$contact->contact}}</textarea>
+                              <textarea  id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{$contact->contact}}</textarea>
                             </div>
                           </div>
 
