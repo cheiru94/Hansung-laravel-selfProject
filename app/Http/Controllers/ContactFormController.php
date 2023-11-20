@@ -103,6 +103,10 @@ class ContactFormController extends Controller
     public function edit(string $id)
     {
         //
+
+        $contact = ContactForm::find($id);
+        // dd($contact);
+        return view( 'contacts.edit', compact('contact') );
     }
 
     /**
@@ -111,6 +115,16 @@ class ContactFormController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $contact = ContactForm::find($id);
+        $contact->title = $request->title;
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->type = $request->type;
+        $contact->region = $request->region;
+        $contact->contact = $request->contact;
+        $contact->save();
+
+        return to_route('contacts.index');
     }
 
     /**
@@ -119,5 +133,9 @@ class ContactFormController extends Controller
     public function destroy(string $id)
     {
         //
+        $contact = ContactForm::find($id);
+        $contact->delete();  // 데이터 ->delete();로 해당 레코드를 다 지우자
+
+        return to_route('contacts.index');
     }
 }
