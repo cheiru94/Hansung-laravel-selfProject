@@ -3,10 +3,11 @@
     <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
       <img class="w-10 h-10  " src="/imgs/logo/hansung-g.png" alt="안뜸">
       <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 1993 한성 건축사사무소 대표자 이상열</p>
-      <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">울산광역시 중구 성안로 175</p>
-      <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">052-273-1988</p>
+      <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">울산광역시  중구 구교14길 12, 2층 한성 건축사사무소</p>
+      <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">우편번호 : 44506</p>
+      <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">Tel 052-273-1988</p>
+      <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">Fax 052-242-0900</p>
       <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">hansung4003@naver.com</p>
-      <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">청안이씨 효령종친회 회장</p>
 
       <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
         <a class="text-gray-500">
