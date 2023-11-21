@@ -29,7 +29,7 @@
       </div>
     </div>
     {{-- 우측 글자 --}}
-    <div class=" px-[80px] mt-[-80px]  self-stretch flex-col justify-center items-center gap-2.5 inline-flex">
+    <div class=" px-[80px]   self-stretch flex-col justify-center items-center gap-2.5 inline-flex">
       <div class="w-[527px] text-black text-[40px] "><span class="font-black  font-['Inter']">한성 건축사사무소</span> 홈페이지에 <br/>오신것을 진심으로 환영합니다</div>
       <div class="w-[518px] h-[80px]">
         <span style="text-black text-xl font-normal font-['Inter']">      
