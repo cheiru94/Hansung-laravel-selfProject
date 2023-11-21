@@ -31,22 +31,22 @@ class CheckFormService
   // 5. region
   public static function checkRegion($data2){
     switch ($data2->region ) {
-      case 0:
+      case '남구':
         $region = '남구';
         break;
-      case 1:
+      case '중구':
         $region = '중구';
         break;
-      case 2:
+      case '북구':
         $region = '북구';
         break;
-      case 3:
+      case '동구':
         $region = '동구';
         break;
-      case 4:
+      case '울주군':
         $region = '울주군';
         break;
-      case 5:
+      case '그 외 지역':
         $region = '그 외 지역';
         break;
     }
