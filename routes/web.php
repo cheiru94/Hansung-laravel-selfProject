@@ -38,9 +38,14 @@ Route::prefix('contacts')   // 1. url주소
           Route::delete('/{id}destroy','destroy')->name('destroy'); // 
      });
 
-/* 2. /greeting  */
-Route::get('/greeting', function () {
-  return view('comunity.greeting');
+/* 2. /message  */
+Route::get('/message', function () {
+  return view('hansung.message');
+});
+
+/* 3 /works  */
+Route::get('/works', function () {
+  return view('hansung.works');
 });
 
 

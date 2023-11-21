@@ -101,7 +101,7 @@
         </div>
         <div class="container px-5 pb-24 mx-auto fle justify-center sm:flex-nowrap flex-wrap">
           <div class="lg:w-full h-[500px] md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-            <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=ko&amp;q=175+Seongan-ro,+Jung-gu,+Ulsan,+South+Korea&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" style="filter:  opacity(0.8);"></iframe>
+            <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=ko&amp;q=대한민국+울산광역시+중구+구교14길+12&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" style="filter:  opacity(0.8);"></iframe>
             <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
               {{-- 좌측 상단 div --}}
               <div class="lg:w-1/2 px-6">

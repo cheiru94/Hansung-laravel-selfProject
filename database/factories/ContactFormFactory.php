@@ -17,12 +17,13 @@ class ContactFormFactory extends Factory
     public function definition(): array
     {
       $types = ['house', 'villa', 'apartment', 'shop', 'supervision'];
+      $regions = ['남구', '중구', '북구', '북구', '동구','울주군','그 외 지역'];
         return [
           'title' => $this->faker->realText(50), 
           'name' => $this->faker->name(20), 
           'email' => $this->faker->email(), 
           'type' => $this->faker->randomElement($types),
-          'region' => $this->faker->numberBetween(0, 5), 
+          'region' => $this->faker->randomElement($regions), 
           'contact' => $this->faker->realText(200),
         ];
     }

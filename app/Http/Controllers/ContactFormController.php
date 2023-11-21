@@ -12,19 +12,28 @@ class ContactFormController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-      /* 🟡 페이지 네이션 하기 전 */
-      // $contacts = ContactForm::select('id','name','title','region','created_at')->get();
-      
-      /* 🟢 페이지 네이션 처리 */
-      $contacts = ContactForm::select('id','name','title','region','created_at')
-                               ->paginate(20);
+      public function index(Request $request)
+      {
+        if ($request->topic) {
+          // dd($request->topic);
+        }
+        $topic = $request->topic; // 입력 받은 키워드 
+        $search = $request->search; // 입력 받은 키워드 
+        // $query = ContactForm::search($search);
+        $query = ContactForm::search([$topic,$search]);
 
 
-      // 폴더명.파일명
-      return view('contacts.index',compact('contacts')); 
-    }
+        /* 🟡 페이지 네이션 하기 전 */
+        // $contacts = ContactForm::select('id','name','title','region','created_at')->get();
+        
+        /* 🟢 페이지 네이션 처리 */
+        $contacts = $query->select('id','name','title','region','created_at')
+                                ->orderByDesc('id')
+                                ->paginate(10);
+
+        // 폴더명.파일명
+        return view('contacts.index',compact('contacts')); 
+      }
 
     /**
      * Show the form for creating a new resource.
