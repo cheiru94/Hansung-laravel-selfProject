@@ -14,10 +14,16 @@ class ContactFormController extends Controller
      */
     public function index()
     {
-      $contacts = ContactForm::select('id','name','title','region','created_at')->get();
+      /* 🟡 페이지 네이션 하기 전 */
+      // $contacts = ContactForm::select('id','name','title','region','created_at')->get();
+      
+      /* 🟢 페이지 네이션 처리 */
+      $contacts = ContactForm::select('id','name','title','region','created_at'
+                              )->paginate(20);
 
-        // 폴더명.파일명
-        return view('contacts.index',compact('contacts')); 
+
+      // 폴더명.파일명
+      return view('contacts.index',compact('contacts')); 
     }
 
     /**
