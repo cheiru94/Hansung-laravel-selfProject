@@ -18,8 +18,8 @@ class ContactFormController extends Controller
       // $contacts = ContactForm::select('id','name','title','region','created_at')->get();
       
       /* 🟢 페이지 네이션 처리 */
-      $contacts = ContactForm::select('id','name','title','region','created_at'
-                              )->paginate(20);
+      $contacts = ContactForm::select('id','name','title','region','created_at')
+                               ->paginate(20);
 
 
       // 폴더명.파일명
@@ -89,7 +89,7 @@ class ContactFormController extends Controller
      */
     public function update(UpdateContactRequest $request, string $id)
     {
-        //
+        // 수정
         $contact = ContactForm::find($id);
         $contact->title = $request->title;
         $contact->name = $request->name;
