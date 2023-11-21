@@ -12,15 +12,22 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
           <div class="p-6 text-gray-900">
 
-            <button class=" text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-              <a class="text" href="{{route('contacts.create')}}" class="text-blue-500">신규등록</a>
-            </button><br>
 
+            {{-- 검색하기 input --}}
             <div class="w-full flex justify-center">
-              <form class="mb-8" action="{{route('contacts.index')}}" method="get"> {{-- 검색된 결과로 다시 index로 팅구자 --}}
-                <input type="text" name="search" placeholder="검색" class="w-[350px]">
+
+              <form method="get" action="{{route('contacts.index')}}" class="mb-8"> {{-- 검색된 결과로 다시 index로 팅구자 --}}
+                <label for="topic" class="leading-7 text-lg text-gray-600">검색 분류</label><br>
+                <select name="topic"  class=" w-[100px] h-[40px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;">
+                  {{-- 숫자는 === 이 먹지 않는다..;;; --}}
+                  <option value="name" {{ old('topic')==="name" ? 'selected' : ''}}  >성명</option>
+                  <option value="title" {{ old('topic')==="title" ? 'selected' : ''}} >문의사항</option>
+                  <option value="region" {{ old('topic')==="region" ? 'selected' : ''}} >지역</option>
+                </select>
+                <input type="text" name="search" placeholder="검색" class="w-[350px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;"">
                 <button class=" text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">검색하기</button>
               </form>
+              
             </div>
               
             
@@ -48,22 +55,22 @@
                             @php
                               $region = '';
                               switch ($contact->region) {
-                                case 0:
+                                case '남구':
                                   $region = '남구';
                                   break;
-                                case 1:
+                                case '중구':
                                   $region = '중구';
                                   break;
-                                case 2:
+                                case '북구':
                                   $region = '북구';
                                   break;
-                                case 3:
+                                case '동구':
                                   $region = '동구';
                                   break;
-                                case 4:
+                                case '울주군':
                                   $region = '울주군';
                                   break;
-                                case 5:
+                                case '그 외 지역':
                                   $region = '그 외 지역';
                                   break;
                               }
@@ -77,6 +84,12 @@
                 </table>
               </div>
 
+                {{-- 신규 등록 --}}
+              <div class="flex justify-end mt-4">
+                <button class=" text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                  <a class="text" href="{{route('contacts.create')}}" class="text-blue-500">신규등록</a>
+                </button><br>
+              </div>
               {{-- 페이지네이션 --}}
               <div class="mt-6 flex justify-center items-center">
                 {{$contacts->links()}}

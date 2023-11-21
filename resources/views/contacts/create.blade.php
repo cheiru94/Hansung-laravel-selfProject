@@ -59,12 +59,12 @@
                           <div class="relative">
                             <label for="region" class="leading-7 text-lg text-gray-600">지역선택 (울산광역시)</label><br>
                             <select name="region">
-                              <option value="0" {{ old('region')==0?'selected':'' }}>남구</option>
-                              <option value="1"  {{ old('region')==1?'selected':'' }}>중구</option>
-                              <option value="2"  {{ old('region')==2?'selected':'' }}>북구</option>
-                              <option value="3" {{ old('region')==3?'selected':'' }}>동구</option>
-                              <option value="4" {{ old('region')==4?'selected':'' }}>울주군</option>
-                              <option value="5" {{ old('region')==5?'selected':'' }}>그 외 지역</option>
+                              <option value="남구" {{ old('region')=="남구"?'selected':'' }}>남구</option>
+                              <option value="중구"  {{ old('region')=="중구"?'selected':'' }}>중구</option>
+                              <option value="북구"  {{ old('region')=="북구"?'selected':'' }}>북구</option>
+                              <option value="동구" {{ old('region')=="동구"?'selected':'' }}>동구</option>
+                              <option value="울주군" {{ old('region')=="울주군"?'selected':'' }}>울주군</option>
+                              <option value="그 외 지역" {{ old('region')=="그 외 지역"?'selected':'' }}>그 외 지역</option>
                             </select>
                           </div>
                         </div>

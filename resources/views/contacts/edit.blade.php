@@ -64,12 +64,12 @@
                               <label for="region" class="leading-7 text-lg text-gray-600">지역선택 (울산광역시)</label><br>
                               <select name="region">
                                 {{-- 숫자는 === 이 먹지 않는다..;;; --}}
-                                <option value="0" @if ($contact->region == 0) selected @endif >남구</option>
-                                <option value="1" @if ($contact->region == 1) selected @endif >중구</option>
-                                <option value="2" @if ($contact->region == 2) selected @endif >북구</option>
-                                <option value="3" @if ($contact->region == 3) selected @endif >동구</option>
-                                <option value="4" @if ($contact->region == 4) selected @endif >울주군</option>
-                                <option value="5" @if ($contact->region == 5) selected @endif >그 외 지역</option>
+                                <option value="남구" @if ($contact->region == "남구") selected @endif >남구</option>
+                                <option value="중구" @if ($contact->region == "중구") selected @endif >중구</option>
+                                <option value="북구" @if ($contact->region == "북구") selected @endif >북구</option>
+                                <option value="동구" @if ($contact->region == "동구") selected @endif >동구</option>
+                                <option value="울주군" @if ($contact->region == "울주군") selected @endif >울주군</option>
+                                <option value="그 외 지역" @if ($contact->region == "그 외 지역") selected @endif >그 외 지역</option>
                               </select>
                             </div>
                           </div>
