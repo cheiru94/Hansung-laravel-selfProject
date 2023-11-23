@@ -40,17 +40,17 @@
       {{-- 2.2 project 컴포넌트 --}}
       <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
         {{-- 2.2.1 --}} 
-        <x-hansungs.work title='고향(故郷)' image_path='/imgs/projects/1.jpg' />
+        <x-hansungs.project title='고향(故郷)' image_path='/imgs/projects/1.jpg' />
         {{-- 2.2.2 --}} 
-        <x-hansungs.work title='미래(未来)' image_path='/imgs/projects/2.jpeg' />
+        <x-hansungs.project title='미래(未来)' image_path='/imgs/projects/2.jpeg' />
         {{-- 2.2.3 --}} 
-        <x-hansungs.work title='추억(追憶)' image_path='/imgs/projects/3.jpeg' />
+        <x-hansungs.project title='추억(追憶)' image_path='/imgs/projects/3.jpeg' />
         {{-- 2.2.4 --}} 
-        <x-hansungs.work title='기억(記憶)' image_path='/imgs/projects/4.jpeg' />
+        <x-hansungs.project title='기억(記憶)' image_path='/imgs/projects/4.jpeg' />
         {{-- 2.2.5 --}} 
-        <x-hansungs.work title='희망(希望)' image_path='/imgs/projects/5.jpeg' />
+        <x-hansungs.project title='희망(希望)' image_path='/imgs/projects/5.jpeg' />
         {{-- 2.2.6 --}} 
-        <x-hansungs.work title='열정(熱情)' image_path='/imgs/projects/6.jpg' />
+        <x-hansungs.project title='열정(熱情)' image_path='/imgs/projects/6.jpg' />
       </div>
 
     </div>
