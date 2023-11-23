@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* 🟢 메인 페이지 🟢 */
+
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
 
@@ -25,18 +27,18 @@ Route::get('/', function () {
 
 /* 1. /contacts */
 Route::prefix('contacts')   // 1. url주소
-     ->middleware(['auth']) // 2. 미들웨어 : 로그인 하지 않으면 페이지에 접속할 수 없음 
-     ->name('contacts.')    // 3. 라우터 이름 
-     ->controller(ContactFormController::class)  // 3. 컨트롤러
-     ->group(function(){  
-          Route::get('/','index')->name('index'); // 
-          Route::get('/create','create')->name('create'); // 
-          Route::post('/store','store')->name('store'); // 
-          Route::get('/{id}','show')->name('show'); // 
-          Route::get('/{id}/edit','edit')->name('edit'); // 
-          Route::put('/{id}','update')->name('update'); // 
-          Route::delete('/{id}destroy','destroy')->name('destroy'); // 
-     });
+  ->middleware(['auth']) // 2. 미들웨어 : 로그인 하지 않으면 페이지에 접속할 수 없음 
+  ->name('contacts.')    // 3. 라우터 이름 
+  ->controller(ContactFormController::class)  // 3. 컨트롤러
+  ->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/{id}', 'show')->name('show');
+    Route::get('/{id}/edit', 'edit')->name('edit');
+    Route::put('/{id}', 'update')->name('update');
+    Route::delete('/{id}destroy', 'destroy')->name('destroy');
+  });
 
 /* 2. /message  */
 Route::get('/message', function () {
@@ -44,24 +46,25 @@ Route::get('/message', function () {
 });
 
 /* 3 /works  */
-Route::get('/works', function () {
-  return view('hansung.works');
+Route::get('/projects', function () {
+  return view('hansung.projects');
 });
-
-
 
 // 🟢 작성 ↑↑↑↑↑↑↑↑↑↑↑↑
 
 
-// Breeze 내용
+
+
+
+/* 🔴　Breeze 내용 🔴 */
 Route::get('/dashboard', function () {
-    return view('dashboard');
+  return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+  Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+  Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+  Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
