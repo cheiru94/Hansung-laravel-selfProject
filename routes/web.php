@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,21 @@ Route::get('/message', function () {
 Route::get('/projects', function () {
   return view('hansung.projects');
 });
+
+// 🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢
+// 테스트 
+
+Route::get('/main', [PostController::class, 'index']);
+
+Route::get('/create', function () {
+  return view('create');
+});
+
+Route::post("/post", [PostController::class, 'store']);
+
+
+//🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢
+
 
 // 🟢 작성 ↑↑↑↑↑↑↑↑↑↑↑↑
 

@@ -20,11 +20,14 @@
                 <label for="topic" class="leading-7 text-lg text-gray-600">검색 분류</label><br>
                 <select name="topic"  class=" w-[100px] h-[40px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;">
                   {{-- 숫자는 === 이 먹지 않는다..;;; --}}
-                  <option value="name" {{ old('topic')==="name" ? 'selected' : ''}}  >성명</option>
+                  {{-- <option value="name" {{ old('topic')==="name" ? 'selected' : ''}}  >성명</option>
                   <option value="title" {{ old('topic')==="title" ? 'selected' : ''}} >문의사항</option>
-                  <option value="region" {{ old('topic')==="region" ? 'selected' : ''}} >지역</option>
+                  <option value="region" {{ old('topic')==="region" ? 'selected' : ''}} >지역</option> --}}
+                  <option value="name" {{ $topic==="name" ? 'selected' : ''}}  >성명</option>
+                  <option value="title" {{ $topic==="title" ? 'selected' : ''}} >문의사항</option>
+                  <option value="region" {{ $topic==="region" ? 'selected' : ''}} >지역</option>
                 </select>
-                <input type="text" name="search" placeholder="검색" class="w-[350px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;"">
+                <input value="{{$search}}" type="text" name="search" placeholder="검색" class="w-[350px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;"">
                 <button class=" text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">검색하기</button>
               </form>
               

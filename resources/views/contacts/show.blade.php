@@ -71,9 +71,12 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="contact" class="leading-7 text-lg text-gray-600">문의 내용</label>
-                              <div id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">
-                                {{$contact->contact}}
-                              </div>
+                              {{-- <div id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"> --}}
+                                <div>
+                                {!!$contact->contact!!}
+                                <div>
+
+                              {{-- </div> --}}
                             </div>
                           </div>
                       

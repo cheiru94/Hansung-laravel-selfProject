@@ -18,7 +18,8 @@ return new class extends Migration
       $table->string('email', 255); // 3. 이메일
       $table->string('type', 20); // 4. 건물 종류
       $table->string('region', 20); // 5. 지역
-      $table->string('contact', 200); // 6. 문의 내용
+      // $table->string('contact', 200); // 6. 문의 내용
+      $table->text('contact'); // 6. 문의 내용
       $table->timestamps();
     });
   }

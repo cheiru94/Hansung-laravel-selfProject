@@ -69,7 +69,7 @@
                           </div>
                         </div>
 
-                        {{-- 6. contact --}}
+                        {{--💛  6. contact --}}
                         <div class="p-2 w-full mb-[10px]">
                           <div class="relative">
                             <label for="contact" class="leading-7 text-lg text-gray-600">문의 내용</label>
@@ -84,6 +84,13 @@
                             <input  type="checkbox" id="caution" name="caution" class=" mb-[4px]">
                           </div>
                         </div>
+                        <script>
+                          $('#contact').summernote({
+                            placeholder: '안녕하세요, 한성 건축사사무소',
+                            tabsize: 2,
+                            height: 300
+                          });
+                        </script>
 
                         {{-- 8. button --}}
                         <div class="p-2 w-full mb-[10px]">
