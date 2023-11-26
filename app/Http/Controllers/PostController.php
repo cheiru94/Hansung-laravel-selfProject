@@ -15,7 +15,7 @@ class PostController extends Controller
     //
     $posts = Post::all();
     // $name = Post::find($posts->id)->user->name;
-    return view('comunitys.comunity_list', compact('posts'));
+    return view('comunitys.index', compact('posts'));
   }
 
   /**
@@ -40,6 +40,8 @@ class PostController extends Controller
   public function show(Post $post)
   {
     //
+
+    return view('.comunitys');
   }
 
   /**
