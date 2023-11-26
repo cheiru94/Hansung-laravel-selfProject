@@ -15,7 +15,8 @@
                 <section class="text-gray-600 body-font relative">
                   
                     <div class="container px-5  mx-auto">
-                      <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                      <div class="lg:w-1/2 md:w-2/3 mx-auto"> {{-- 폭관리 --}}
+                        {{-- <div class=" mx-auto">  --}}
                         <div class="flex flex-wrap -m-2">
 
                           {{-- 1. title --}}
@@ -60,7 +61,7 @@
                             <div class="relative">
                               <label for="region" class="leading-7 text-lg text-gray-600">지역선택 (울산광역시)</label><br>
                               
-                                <div class="w-full  rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                <div class="w-full rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                   {{$region}}
                                 </div>
                               
@@ -72,7 +73,7 @@
                             <div class="relative">
                               <label for="contact" class="leading-7 text-lg text-gray-600">문의 내용</label>
                               {{-- <div id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"> --}}
-                                <div>
+                                <div class="mb-[50px]">
                                 {!!$contact->contact!!}
                                 <div>
 
