@@ -11,9 +11,8 @@
 
   <!-- Scripts -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
-  
-
 </head>
+
 <body>
 
   {{-- 🟢 1. top bar --}}
