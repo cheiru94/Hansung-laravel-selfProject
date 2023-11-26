@@ -67,7 +67,7 @@
                         <tr class="text-center">
                           <td class="border-t-2 border-gray-200 px-4 py-3"> {{$post->id}} </td>
                           <td class="border-t-2 border-gray-200 px-4 py-3">{{$post->user->name}}</td>
-                          <td class="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900">{{-- <a href="{{ route('contacts.show' ,['id'=>$contact->id])}}"> --}}{{$post->title}}{{-- </a> --}}</td>
+                          <td class="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900"><a href="/posts/{{ $post->id}}">{{$post->title}}</a></td>
                           <td class="border-t-2 border-gray-200 px-4 py-3">{{$post->created_at}}</td>
                         </tr>
                     @endforeach
@@ -92,7 +92,7 @@
   </div>
 {{-- </x-app-layout> --}}
   {{-- 🟢 3. 푸터 --}}
-  <x-nav-footer></x-nav-footer>
+  <x-nav-footer class="fixed"/>
 
 </body>
 </html>
