@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -51,19 +52,13 @@ Route::get('/projects', function () {
   return view('hansung.projects');
 });
 
-// 🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢
-// 테스트 
-
-Route::get('/main', [PostController::class, 'index']);
-
-Route::get('/create', function () {
-  return view('create');
-});
-
-Route::post("/post", [PostController::class, 'store']);
 
 
-//🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢
+/* 4. PostController - /posts */
+Route::resource('/posts', PostController::class);
+
+/* 5. Commentontroller - /post.comments  */
+Route::resource('/posts.comments', CommentController::class)->only(['store', 'update', 'destroy']);
 
 
 // 🟢 작성 ↑↑↑↑↑↑↑↑↑↑↑↑
