@@ -13,7 +13,7 @@ class PostController extends Controller
   public function index()
   {
     //
-    $posts = Post::all();
+    $posts = Post::orderBy('created_at', 'desc')->get();
     // $name = Post::find($posts->id)->user->name;
     return view('comunitys.index', compact('posts'));
   }
@@ -24,30 +24,35 @@ class PostController extends Controller
   public function create()
   {
     //
+    return view('comunitys.create');
   }
 
   /**
    * Store a newly created resource in storage.
    */
-  public function store(Request $request)
+  public function store(Request $request, string $id)
   {
-    //
+    Post::create($request->all());
+    return view('/post');
   }
 
   /**
    * Display the specified resource.
    */
-  public function show(Post $post)
+  public function show(string $id)
   {
     //
+    $post = Post::find($id);
+    $comments = $post->comments();
 
-    return view('.comunitys');
+    // dd($comments);
+    return view('comunitys.show', compact('post', 'comments'));
   }
 
   /**
    * Show the form for editing the specified resource.
    */
-  public function edit(Post $post)
+  public function edit(string $id)
   {
     //
   }
@@ -55,7 +60,7 @@ class PostController extends Controller
   /**
    * Update the specified resource in storage.
    */
-  public function update(Request $request, Post $post)
+  public function update(Request $request, string $id)
   {
     //
   }
@@ -63,7 +68,7 @@ class PostController extends Controller
   /**
    * Remove the specified resource from storage.
    */
-  public function destroy(Post $post)
+  public function destroy(string $id)
   {
     //
   }
