@@ -18,7 +18,7 @@
   {{-- 🟢 1. top bar --}}
   <x-nav-top></x-nav-top>
 
-  {{$slot}}
+  {{ $slot }}
 
 
 

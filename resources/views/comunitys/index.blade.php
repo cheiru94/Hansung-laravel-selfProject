@@ -57,7 +57,7 @@
                     <tr class="text-center">
                       <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">No.</th>
                       <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">성명</th>
-                      <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">문의사항</th>
+                      <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">제목</th>
                       <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">등록일</th>
                     </tr>
                   </thead>
@@ -78,7 +78,7 @@
                 {{-- 신규 등록 --}}
               <div class="flex justify-end mt-4">
                 <button class=" text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                  <a class="text" href="{{route('contacts.create')}}" class="text-blue-500">신규등록</a>
+                  <a class="text" href="{{route('posts.create')}}" class="text-blue-500">신규등록</a>
                 </button><br>
               </div>
               {{-- 페이지네이션 --}}
@@ -91,8 +91,10 @@
       </div>
   </div>
 {{-- </x-app-layout> --}}
+
+
   {{-- 🟢 3. 푸터 --}}
-  <x-nav-footer class="fixed"/>
+  <x-nav-footer />
 
 </body>
 </html>
