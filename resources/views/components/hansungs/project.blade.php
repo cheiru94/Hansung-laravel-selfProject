@@ -21,7 +21,7 @@
   <div class="flex justify-center">
     <div class="w-[100px] h-[1px] bg-black my-2 "></div>
   </div>
-  <p class="text-base leading-relaxed mt-2 ">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
+  <p class="text-base leading-relaxed mt-2 ">{{$slot}}</p>
   {{-- 3. a_link --}}
   <a href="{{$a_link}}" class="text-indigo-500 inline-flex items-center mt-3">더보기
     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
