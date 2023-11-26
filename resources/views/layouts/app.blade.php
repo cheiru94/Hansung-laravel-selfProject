@@ -31,7 +31,7 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             
-          <x-nav-top></x-nav-top>
+          <x-nav-top/>
           {{-- 원래 네비게이션바 --}}
           {{-- @include('layouts.navigation') --}}
 
@@ -51,15 +51,10 @@
         </div>
 
         {{-- 🟡 썸머노트 --}}
-        <script>
-          $('#contact').summernote({
-            placeholder: '안녕하세요, 한성 건축사사무소',
-            tabsize: 2,
-            height: 300
-          });
-        </script>
+       
         {{-- 🟡 썸머노트 --}}
 
+        <x-nav-footer/>
     </body>
 </html>
 
