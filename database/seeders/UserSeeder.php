@@ -9,17 +9,24 @@ use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-      DB::table('users')->insert(
+  /**
+   * Run the database seeds.
+   */
+  public function run(): void
+  {
+    DB::table('users')->insert(
+      [
         [
           'name' => '이재일',
           'email' => 'cheiru94@gmail.com',
           'password' => Hash::make('wodlf011')
+        ],
+        [
+          'name' => 'Ichiban',
+          'email' => 'lji941001@gmail.com',
+          'password' => Hash::make('wodlf011')
         ]
-      );
-    }
+      ]
+    );
+  }
 }
