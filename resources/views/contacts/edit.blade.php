@@ -99,4 +99,10 @@
       </div>
   </div>
 </x-app-layout>
- 
+<script>
+  $('#contact').summernote({
+    placeholder: '안녕하세요, 한성 건축사사무소',
+    tabsize: 2,
+    height: 300
+  });
+</script>
