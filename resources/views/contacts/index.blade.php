@@ -1,9 +1,28 @@
-<x-app-layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+  <!-- Scripts -->
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body>
+
+  {{-- 🟢 1. top bar --}}
+  <x-nav-top></x-nav-top>
+{{-- <x-app-layout>
   <x-slot name="header">
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
           커뮤니티
       </h2>
-  </x-slot>
+  </x-slot> --}}
 
   <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -18,7 +37,8 @@
 
               <form method="get" action="{{route('contacts.index')}}" class="mb-8"> {{-- 검색된 결과로 다시 index로 팅구자 --}}
                 <label for="topic" class="leading-7 text-lg text-gray-600">검색 분류</label><br>
-                <select name="topic"  class=" w-[100px] h-[40px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;">
+                
+                <select name="topic"  class=" w-[100px] h-[50px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;">
                   {{-- 숫자는 === 이 먹지 않는다..;;; --}}
                   {{-- <option value="name" {{ old('topic')==="name" ? 'selected' : ''}}  >성명</option>
                   <option value="title" {{ old('topic')==="title" ? 'selected' : ''}} >문의사항</option>
@@ -27,6 +47,7 @@
                   <option value="title" {{ $topic==="title" ? 'selected' : ''}} >문의사항</option>
                   <option value="region" {{ $topic==="region" ? 'selected' : ''}} >지역</option>
                 </select>
+
                 <input value="{{$search}}" type="text" name="search" placeholder="검색" class="w-[350px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;"">
                 <button class=" text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">검색하기</button>
               </form>
@@ -102,5 +123,11 @@
           </div>
       </div>
   </div>
-</x-app-layout>
+{{-- </x-app-layout> --}}
+  {{-- 🟢 3. 푸터 --}}
+  <x-nav-footer></x-nav-footer>
+
+</body>
+</html>
+ 
  
