@@ -9,6 +9,8 @@ class Comment extends Model
 {
   use HasFactory;
 
+  protected $fillable = ['content', 'post_id', 'user_id'];
+
   // 1. user와 연동 
   public function user()
   {
