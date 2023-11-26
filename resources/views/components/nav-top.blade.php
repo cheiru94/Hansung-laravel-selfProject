@@ -11,9 +11,9 @@
     </a>
     {{-- nav bar --}}
     <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-      <a href="projects" class="mr-10 hover:text-gray-900 text-2xl">한성건축</a>
-      <a href="message" class="mr-10 hover:text-gray-900 text-2xl">대표 인사말</a>
-      <a href="#" class="mr-10 hover:text-gray-900 text-2xl">커뮤니티</a>
+      <a href="/projects" class="mr-10 hover:text-gray-900 text-2xl">한성건축</a>
+      <a href="/message" class="mr-10 hover:text-gray-900 text-2xl">대표 인사말</a>
+      <a href="/posts" class="mr-10 hover:text-gray-900 text-2xl">커뮤니티</a>
       <a href="{{route('contacts.index')}}" class="mr-10 hover:text-gray-900 text-2xl">1:1 상담</a>
     </nav>
     {{-- 로그인 등록 ~ --}}
