@@ -18,18 +18,18 @@
   </div>
 
   {{-- 댓글 추가 --}}
-  <div class="px-6 my-5">
+  <div class="px-8 my-5 ">
     <form action="/posts/{{$post->id}}/comments " method="post" class=" flex items-center ">
       @csrf
-      <textarea value='comment' name="comment" required placeholder="댓글 입력"  cols="50" rows="1"  class="w-[750px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;"></textarea>
+      <textarea name="comment" required placeholder="댓글 입력"  cols="50" rows="1"  class="w-[750px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;"></textarea>
       <button class="ml-7 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">댓글 작성</button>
     </form>
   </div>  
 
-
+<div class="px-8 my-[70px]" >댓글 리스트 ({{$post->comments->count()}}개) </div>
 
  {{-- 댓글 --}}
-  <section class="text-gray-600 px-2.5 body-font overflow-hidden mb-6">
+  <section class="text-gray-600 px-3 body-font overflow-hidden mb-6">
     <div class="container px-5  {{-- mx-auto --}}">
       <div class="-my-8 divide-y-2 divide-gray-100">
         
