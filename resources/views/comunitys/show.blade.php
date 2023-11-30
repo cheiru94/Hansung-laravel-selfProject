@@ -28,9 +28,9 @@
 
 <div class="px-8 my-[70px]" >댓글 리스트 ({{$post->comments->count()}}개) </div>
 
- {{-- 댓글 --}}
+ {{-- 🟢🟢 댓글 🟢🟢 --}}
   <section class="text-gray-600 px-3 body-font overflow-hidden mb-6">
-    <div class="container px-5  {{-- mx-auto --}}">
+    <div class="container px-5 ">
       <div class="-my-8 divide-y-2 divide-gray-100">
         
         @foreach ($post->comments()->orderBy('created_at', 'desc')->get()  as $comment)
@@ -40,13 +40,26 @@
               <span class="mt-1 text-gray-500 text-sm">{{$comment->created_at}}</span>
             </div>
             <div class="md:flex-grow">
-              <p class="leading-relaxed">{{$comment->comment}}</p>
-              {{-- 삭제 --}}
+              {{-- <p name="userComment" value="{{$comment->comment}}" class="leading-relaxed">{{$comment->comment}}</p> --}}
+              <input name="userComment" value="{{$comment->comment}}" readonly class="leading-relaxed border-none focus:ring-0" >
+             
+              {{-- 🟡 삭제 --}}
               @if(Auth::check() && $comment->user_id === Auth::user()->id)
-                <form action="/comments/{{$comment->id}}" method="POST">
+
+                <form action="/posts/{{$post->id}}/comments/{{$comment->id}}" method="POST">
+                {{-- <form action="{{ route('posts.comments.edit',['post'=>$post->id,'comment'=>$comment->id ]) }}" method="POST"> --}}
                     @csrf
-                    @method('DELETE')
+                    @method('delete')
                     <button type="submit" class="text-red-500">삭제</button>
+                </form>
+                
+                {{-- 🟡 수정 --}}
+                {{-- <form action="/posts/{{$post->id}}/comments/{{$comment->id}}/edit" method="GET "> --}}
+                <form action="{{ route('posts.comments.edit',['post'=>$post->id,'comment'=>$comment->id ]) }}" method="GET ">
+                  <input type="hidden" name="userComment" value="{{$comment->comment}}">
+                  <input type="hidden" id="chechedComment" name="chechedComment" value="{{$comment->id}}">
+                  <button  type="submit" class="text-blue-500">수정</button>
+                  <!-- value에 값을 변수로 박아ㄷ둔다 -->
                 </form>
               @endif
             </div>
@@ -59,7 +72,23 @@
 
   {{-- 아래 여백 --}}
   <div class="h-[50px]"> </div>
-
-
 </x-hansung-layout>
 
+
+{{-- <script>
+
+   function chechedComment() {
+    console.log('확인용');
+    const chechedComment = document.getElementById('chechedComment');
+   
+
+    const button = document.querySelector('button[data-comment]');
+    const selectedCommentId =  button.getAttribute('data-comment');
+    console.log(selectedCommentId);
+
+    chechedComment.value=selectedCommentId;
+
+
+  }
+  
+</script> --}}
