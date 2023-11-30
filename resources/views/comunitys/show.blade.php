@@ -9,7 +9,7 @@
     </div>
     <div class="Navbar w-[1366px] h-[68px] px-[35px] py-2.5 bg-slate-50 border-t-2 border-b-2 border-neutral-200 justify-start items-center gap-[29px] inline-flex">
       <div class="Author w-16 text-black text-[21px] font-bold font-['Inter']">작성자</div>
-      <div class="Authorcontent w-16 text-black text-[21px] font-normal font-['Inter']">관리자</div>
+      <div class="Authorcontent w-16 text-black text-[21px] font-normal font-['Inter']">{{$post->user->name}}</div>
       <div class=" w-[1px] h-[25px]  border-2 border-zinc-400"></div>
       <div class="Date w-[89px] text-black text-[21px] font-bold font-['Inter']">작성일자</div>
       <div class="DateContent w-[235px] text-black text-[21px] font-normal font-['Inter']">{{$post->created_at}}</div>
