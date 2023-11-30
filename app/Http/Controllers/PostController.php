@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreComunityRequest;
 
 class PostController extends Controller
 {
@@ -30,7 +31,7 @@ class PostController extends Controller
   /**
    * Store a newly created resource in storage.
    */
-  public function store(Request $request, string $id)
+  public function store(StoreComunityRequest $request, string $id) // 유효성 검사 적용
   {
     Post::create($request->all());
     return view('/post');
