@@ -54,30 +54,39 @@ class CommentController extends Controller
   public function show(Comment $comment)
   {
     //
+
   }
 
   /**
    * Show the form for editing the specified resource.
    */
-  public function edit(Comment $comment)
+  public function edit(Request $req, string $postId, string $commentId)
   {
     //
+    $userComment = $req->userComment;
+    $chechedComment = $req->chechedComment;
+    // dd($chechedComment);
+    $post = Post::find($postId);
+    $comment = Comment::find($commentId);
+    return view('comunitys.edit', compact('comment', 'post', 'userComment', 'chechedComment'));
   }
 
   /**
    * Update the specified resource in storage.
    */
-  public function update(Request $request, Comment $comment)
+  public function update(Request $request, string $id)
   {
     //
+    return redirect()->back();
   }
 
   /**
    * Remove the specified resource from storage.
    */
-  public function destroy(Comment $comment)
+  public function destroy(string $post_id, string $comment_id)
   {
     // 댓글 삭제 
+    $comment = Comment::find($comment_id);
     $comment->delete();
 
     // 리다이렉션 후 원래 페이지로 돌아가기( back 함수 )
