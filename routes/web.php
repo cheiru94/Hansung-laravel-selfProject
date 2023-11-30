@@ -56,10 +56,8 @@ Route::get('/projects', function () {
 Route::resource('/posts', PostController::class);
 
 /* 5. Commentontroller - /post.comments  */
-Route::resource('/posts.comments', CommentController::class)->only(['store', 'update', 'destroy']);
+Route::resource('/posts.comments', CommentController::class);
 
-
-Route::delete('/comments/{comment}', [CommentController::class, 'destroy']);
 
 
 // 🟢 작성 ↑↑↑↑↑↑↑↑↑↑↑↑
