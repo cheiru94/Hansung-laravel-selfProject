@@ -77,6 +77,10 @@ class CommentController extends Controller
    */
   public function destroy(Comment $comment)
   {
-    //
+    // 댓글 삭제 
+    $comment->delete();
+
+    // 리다이렉션 후 원래 페이지로 돌아가기( back 함수 )
+    return redirect()->back();
   }
 }

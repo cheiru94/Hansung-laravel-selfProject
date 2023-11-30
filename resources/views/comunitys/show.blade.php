@@ -41,6 +41,14 @@
             </div>
             <div class="md:flex-grow">
               <p class="leading-relaxed">{{$comment->comment}}</p>
+              {{-- 삭제 --}}
+              @if(Auth::check() && $comment->user_id === Auth::user()->id)
+                <form action="/comments/{{$comment->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="text-red-500">삭제</button>
+                </form>
+              @endif
             </div>
           </div>
         @endforeach

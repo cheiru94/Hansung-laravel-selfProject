@@ -52,13 +52,14 @@ Route::get('/projects', function () {
   return view('hansung.projects');
 });
 
-
-
 /* 4. PostController - /posts */
 Route::resource('/posts', PostController::class);
 
 /* 5. Commentontroller - /post.comments  */
 Route::resource('/posts.comments', CommentController::class)->only(['store', 'update', 'destroy']);
+
+
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy']);
 
 
 // 🟢 작성 ↑↑↑↑↑↑↑↑↑↑↑↑
