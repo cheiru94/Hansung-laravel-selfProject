@@ -111,7 +111,7 @@
               {{-- 좌측 하단 div --}}
               <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
                 <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">이메일</h2>
-                <a class="text-green-500 leading-relaxed" href="mailto:hansung4003@naver.com">hansung4003@naver.com</a>
+                <a class="text-indigo-600 leading-relaxed" href="mailto:hansung4003@naver.com">hansung4003@naver.com</a>
                 <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">전화번호</h2>
                 <p class="leading-relaxed">010-3842-4003</p>
               </div>
