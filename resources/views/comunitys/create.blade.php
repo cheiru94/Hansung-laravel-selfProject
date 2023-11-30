@@ -7,6 +7,7 @@
               <div class="p-6 text-gray-900">
 
                 {{-- 🟢 Contact Us 내용 🟢 --}}
+                <!-- Validation Errors -->
                 <x-auth-validation-errors class="mb-4" :errors="$errors"/>
 
                 <section class="text-gray-600 body-font relative">
