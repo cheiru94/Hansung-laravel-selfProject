@@ -83,11 +83,14 @@
                       
 
                           {{-- 8. button --}}
-                          <div class=" w-full flex justify-center ">
+                          <div class=" w-full flex  ">
                             {{-- 8.1 뒤로가기 --}}
                             <div class="p-2 w-full mb-[10px]">
                               <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a  class="hover:text-white text-decoration-none underline-none" href="{{route('contacts.index')}}">이전</a></button>
                             </div>
+
+
+                            @if(Auth::check() && $contact->user_id === Auth::user()->id)
                             {{-- 8.2 수정하기 --}}
                             <div class="p-2 w-full mb-[10px]">
                               <form method="get" action="{{route('contacts.edit',['id' => $contact->id])}}">
@@ -96,18 +99,20 @@
                             </div>
                             {{-- 8.3 삭제하기 --}}
                             <div class="p-2 w-full mb-[10px]">
-                              <form id="delete_{{$contact->id}}" method="post" action="{{route('contacts.destroy',['id' => $contact->id])}}">
+                              <form id="delete_{{$contact->id}}"  method="post" action="{{route('contacts.destroy',['id' => $contact->id])}}">
                                 @csrf
                                 @method('delete')
                                 <button data-id="{{ $contact->id }}" onclick="deletePost(this)" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">삭제</button>
                               </form>
                             </div>
+                            @endif
+
+                            
                           </div>
                         </div>
                       </div>
                     </div>
                
-                  
                 </section>
 
               </div>
@@ -123,7 +128,6 @@
         document.getElementById('delete_'+e.dataset.id).submit()  /*  submit으로 실행  */
       }
     }
-
   </script>
 
 </x-app-layout>

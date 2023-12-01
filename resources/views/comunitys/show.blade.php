@@ -28,10 +28,10 @@
           <!-- value에 값을 변수로 박아ㄷ둔다 -->
         </form> 
 
-        <form action="{{route('posts.destroy',['post'=>$post->id])}}" method="post">
+        <form id="delete_{{$post->id}}" action="{{route('posts.destroy',['post'=>$post->id])}}" method="post">
           @csrf
           @method('delete')
-          <button type="submit" class="text-indigo-600  ">게시글 삭제</button>
+          <a href="#" data-id="{{ $post->id }}" onclick="deletePost(this)" class="text-indigo-600  ">게시글 삭제</a>
         </form>
       </div>
     @endif
@@ -80,11 +80,11 @@
                   </form>
 
                   {{-- 🟡 삭제 --}}
-                  <form action="/posts/{{$post->id}}/comments/{{$comment->id}}" method="POST">
+                  <form id="delete_{{$post->id}}"  action="/posts/{{$post->id}}/comments/{{$comment->id}}" method="POST">
                     {{-- <form action="{{ route('posts.comments.edit',['post'=>$post->id,'comment'=>$comment->id ]) }}" method="POST"> --}}
                         @csrf
                         @method('delete')
-                        <button type="submit" class="text-indigo-600  ">삭제</button>
+                        <a href="#" data-id="{{ $post->id }}" onclick="deletePost(this)" class="text-indigo-600  ">삭제</a>
                     </form>
                 </div>
               @endif
@@ -99,6 +99,17 @@
 
   {{-- 아래 여백 --}}
   <div class="h-[50px]"> </div>
+
 </x-hansung-layout>
 
 
+
+  {{-- 삭제시 자바스크립트 --}}
+  <script>
+    function deletePost(e){ 
+        'use strict'
+        if(confirm('진짜 지워도 괜찮나?')){
+          document.getElementById('delete_' + e.dataset.id).submit()  
+        }
+      } 
+  </script>

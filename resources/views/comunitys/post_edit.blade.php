@@ -12,8 +12,9 @@
 
                 <section class="text-gray-600 body-font relative">
 
-                <form method="POST" action="{{route('posts.store')}}">
+                <form method="POST" action="{{route('posts.update',['post'=>$post->id])}}">
                   @csrf
+                  @method('put')
                   <div class="container px-5  mx-auto">
                     <div class="lg:w-1/2 md:w-2/3 mx-auto">
                       <div class="flex flex-wrap -m-2">
