@@ -19,7 +19,7 @@
         <ul class="mt-3 list-disc list-inside text-sm text-red-600">
             @foreach ($errors->all() as $error)
                 {{-- 여기에 내용 넣으면 오류시 출력  --}}
-                {{-- <li>{{ $error }}</li>  --}}
+                <li>{{ $error }}</li> 
             @endforeach
         </ul>
     </div>
