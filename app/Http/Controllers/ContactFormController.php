@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Services\CheckFormService;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ContactFormController extends Controller
 {
@@ -54,11 +55,12 @@ class ContactFormController extends Controller
     // dd($request);
     ContactForm::create([
       'title' => $request->title,
-      'name' => $request->name,
+      'name' => Auth::user()->name,
       'email' => $request->email,
       'type' => $request->type,
       'region' => $request->region,
       'contact' => $request->contact,
+      'user_id' => Auth::user()->id
     ]);
 
     return to_route('contacts.index');

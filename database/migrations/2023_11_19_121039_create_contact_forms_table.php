@@ -20,6 +20,8 @@ return new class extends Migration
       $table->string('region', 20); // 5. 지역
       // $table->string('contact', 200); // 6. 문의 내용
       $table->text('contact'); // 6. 문의 내용
+      // user와 1 : 다 관계
+      $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
       $table->timestamps();
     });
   }

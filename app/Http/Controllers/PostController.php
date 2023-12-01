@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreComunityRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -76,11 +77,15 @@ class PostController extends Controller
    */
   public function update(Request $request, string $id)
   {
+    // dd($request->all());
+    // Log::info($request->all());
     $post = Post::find($id);
 
     $post->title = $request->title;
+    $post->name =  Auth::user()->name;
     $post->email = $request->email;
     $post->contact = $request->contact;
+    $post->user_id =  Auth::user()->id;
 
     $post->save();
     return to_route('posts.index');

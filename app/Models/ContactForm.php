@@ -16,7 +16,14 @@ class ContactForm extends Model
     'type',
     'region',
     'contact',
+    'user_id'
   ];
+
+  // 1. user와 연동 
+  public function user()
+  {
+    return $this->belongsTo(User::class);
+  }
 
   public function scopeSearch($query, $search)  // 첫 번째 인자 $query는 쿼리 빌더의 인스턴스, 두 번째 인자 $search는 사용자가 입력한 검색 키워드
   {
