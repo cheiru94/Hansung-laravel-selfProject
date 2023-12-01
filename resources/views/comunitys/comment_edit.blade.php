@@ -1,7 +1,7 @@
 <x-hansung-layout >
 
   {{-- 아래 여백 --}}
-  <div class="h-[80px]"> </div>
+  <div class="h-[50px]"> </div>
 
 <div class="Contact w-[1440px] h-[auto] p-2.5  mb-10 bg-white flex-col justify-start items-center gap-2.5 inline-flex ">
   <div class="TitleDiv w-[1360px] h-[75px] mb-3 p-2.5 bg-white flex-col justify-start items-start gap-2.5 flex ">
@@ -62,7 +62,7 @@
 </section>
 
 {{-- 아래 여백 --}}
-<div class="h-[50px]"> </div>
+<div class="h-[200px]"> </div>
 
 
 </x-hansung-layout>

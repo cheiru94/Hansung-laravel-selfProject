@@ -123,9 +123,10 @@
           </div>
       </div>
   </div>
-{{-- </x-app-layout> --}}
+
   {{-- 🟢 3. 푸터 --}}
-  <x-nav-footer></x-nav-footer>
+  {{-- <div class="h-[50px]"> </div> --}}
+  <x-nav-footer />
 
 </body>
 </html>

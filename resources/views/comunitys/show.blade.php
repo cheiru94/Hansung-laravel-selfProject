@@ -1,7 +1,7 @@
 <x-hansung-layout >
 
-  {{-- 아래 여백 --}}
-  <div class="h-[80px]"> </div>
+  {{-- 위 여백 --}}
+  <div class="h-[50px]"> </div>
 
   {{-- 게시글 --}}
   <div class="Contact w-[1440px] h-[auto] p-2.5  mb-10 bg-white flex-col justify-start items-center gap-2.5 inline-flex relative">
@@ -52,7 +52,7 @@
 
 
  {{-- 🟢🟢 댓글 🟢🟢 --}}
-  <section class="text-gray-600 px-3 body-font overflow-hidden mb-6">
+  <section class="text-gray-600 px-3 body-font overflow-hidden mb-6 h-[300px]">
     <div class="container px-5 ">
       <div class="-my-8 divide-y-2 divide-gray-100">
         
@@ -98,7 +98,7 @@
   </section>
 
   {{-- 아래 여백 --}}
-  <div class="h-[50px]"> </div>
+  {{-- <div class="h-[50px]"> </div> --}}
 
 </x-hansung-layout>
 

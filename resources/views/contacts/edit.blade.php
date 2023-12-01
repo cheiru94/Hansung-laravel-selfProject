@@ -20,7 +20,7 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="title" class="leading-7 text-lg text-gray-600">문의 사항</label>
-                              <input type="text" id="title" name="title" value="{{$contact->title}}"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                              <input type="text" id="title" name="title" value="{{$contact->title}}"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                           </div>
                           
@@ -28,7 +28,7 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="name" class="leading-7 text-lg text-gray-600">이름</label>
-                              <input  type="text" id="name" name="name" value="{{$contact->name}}"  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                              <input  type="text" id="name" name="name" value="{{$contact->name}}"  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                           </div>
 
@@ -36,7 +36,7 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="email" class="leading-7 text-lg text-gray-600">e-mail</label>
-                              <input type="email" id="email" name="email"  value="{{$contact->email}}"  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                              <input type="email" id="email" name="email"  value="{{$contact->email}}"  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                           </div>
 
@@ -72,13 +72,13 @@
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
                               <label for="contact" class="leading-7 text-lg text-gray-600">문의 내용</label>
-                              <textarea  id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{$contact->contact}}</textarea>
+                              <textarea  id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{$contact->contact}}</textarea>
                             </div>
                           </div>
 
                           {{-- 8. button --}}
                           <div class="p-2 w-full mb-[10px]">
-                              <button class="flex mx-auto text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">수정 완료</button>
+                              <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">수정 완료</button>
                           </div>
                           
                         </div>
