@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreComunityRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -31,10 +32,20 @@ class PostController extends Controller
   /**
    * Store a newly created resource in storage.
    */
-  public function store(StoreComunityRequest $request, string $id) // 유효성 검사 적용
+  public function store(Request $request) // 유효성 검사 적용
   {
-    Post::create($request->all());
-    return view('/post');
+
+    $name =  Auth::user()->id;
+
+    Post::create([
+      'title' => $request->title,
+      'name' =>  $request->name, // 지금은 하드 코딩, 회원관리 기능 구현 될때 까지는 
+      'email' => $request->email,
+      'contact' => $request->contact,
+      'user_id' => $name
+    ]);
+
+    return to_route('posts.index');
   }
 
   /**
