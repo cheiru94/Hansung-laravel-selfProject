@@ -40,27 +40,18 @@
             <span class="mt-1 text-gray-500 text-sm">{{$comment->created_at}}</span>
           </div>
           <div class="md:flex-grow">
-            {{-- <p class="leading-relaxed">{{$comment->comment}}</p> --}}
            
             @if ($comment->id == $chechedComment)
-                {{-- <input type="text" name="userComment" value="{{$comment->comment}}" class="leading-relaxed border-none focus:ring-0"> --}}
-                <textarea name="comment" required placeholder="댓글 입력"  cols="50" rows="1"  class="w-[750px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;">{{$comment->comment}}</textarea>
-                {{-- <form action="/posts/{{$comment->id}}" method="get"> --}}
-                <form action="{{route('posts.show',['post'=>$post->id])}}" method="get">
-                  <button type="submit" class="text-blue-500">수정 완료</button>
+                {{-- <form action="{{route('posts.show',['post'=>$post->id])}}" method="get"  class="flex"> --}}
+                <form action="{{route('posts.comments.update',['post'=>$post->id , 'comment'=>$comment->id])}}" method="post"  class="flex">
+                  @csrf
+                  @method('PUT')
+                  <textarea name="comment" required placeholder="댓글 입력"  cols="50" rows="1"  class="w-[750px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;">{{$comment->comment}}</textarea>
+                  <button type="submit" class="text-blue-500 ml-[20px]">수정 완료</button>
                 </form>
               @else
                 <p class="leading-relaxed">{{$comment->comment}}</p>
             @endif
-
-
-            {{-- 수정 완료 --}}
-       
-              
-              
-
-
-
 
           </div>
         </div>

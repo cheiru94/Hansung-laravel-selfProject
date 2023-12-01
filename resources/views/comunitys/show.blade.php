@@ -43,24 +43,27 @@
               {{-- <p name="userComment" value="{{$comment->comment}}" class="leading-relaxed">{{$comment->comment}}</p> --}}
               <input name="userComment" value="{{$comment->comment}}" readonly class="leading-relaxed border-none focus:ring-0" >
              
-              {{-- 🟡 삭제 --}}
+              {{-- 🟡 수정 , 삭제 🟡 --}}
               @if(Auth::check() && $comment->user_id === Auth::user()->id)
+                <div class="flex">
+                 
+                  {{-- 🟡 수정 --}}
+                  {{-- <form action="/posts/{{$post->id}}/comments/{{$comment->id}}/edit" method="GET "> --}}
+                  <form class="mr-[20px]" action="{{ route('posts.comments.edit',['post'=>$post->id,'comment'=>$comment->id ]) }}" method="GET ">
+                    <input type="hidden" name="userComment" value="{{$comment->comment}}">
+                    <input type="hidden" id="chechedComment" name="chechedComment" value="{{$comment->id}}">
+                    <button  type="submit" class="text-blue-500">수정</button>
+                    <!-- value에 값을 변수로 박아ㄷ둔다 -->
+                  </form>
 
-                <form action="/posts/{{$post->id}}/comments/{{$comment->id}}" method="POST">
-                {{-- <form action="{{ route('posts.comments.edit',['post'=>$post->id,'comment'=>$comment->id ]) }}" method="POST"> --}}
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="text-red-500">삭제</button>
-                </form>
-                
-                {{-- 🟡 수정 --}}
-                {{-- <form action="/posts/{{$post->id}}/comments/{{$comment->id}}/edit" method="GET "> --}}
-                <form action="{{ route('posts.comments.edit',['post'=>$post->id,'comment'=>$comment->id ]) }}" method="GET ">
-                  <input type="hidden" name="userComment" value="{{$comment->comment}}">
-                  <input type="hidden" id="chechedComment" name="chechedComment" value="{{$comment->id}}">
-                  <button  type="submit" class="text-blue-500">수정</button>
-                  <!-- value에 값을 변수로 박아ㄷ둔다 -->
-                </form>
+                  {{-- 🟡 삭제 --}}
+                  <form action="/posts/{{$post->id}}/comments/{{$comment->id}}" method="POST">
+                    {{-- <form action="{{ route('posts.comments.edit',['post'=>$post->id,'comment'=>$comment->id ]) }}" method="POST"> --}}
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="text-indigo-600  ">삭제</button>
+                    </form>
+                </div>
               @endif
             </div>
           </div>

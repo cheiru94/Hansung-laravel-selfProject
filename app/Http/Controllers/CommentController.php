@@ -74,10 +74,18 @@ class CommentController extends Controller
   /**
    * Update the specified resource in storage.
    */
-  public function update(Request $request, string $id)
+  public function update(Request $request, string $post_id, string $comment_id)
   {
     //
-    return redirect()->back();
+    // Comment
+    // return redirect()->back();
+    // return view('welcome');
+    $comment = Comment::find($comment_id);
+    $comment->comment = $request->comment;
+    $comment->save();
+    // return to_route('posts.show', $post_id);
+    return to_route('posts.show', ['post' => $post_id]);
+    // return redirect('/posts/' . $post_id); // redirect는 url 주소를 반환한다!!!
   }
 
   /**
