@@ -35,14 +35,14 @@ class PostController extends Controller
   public function store(Request $request) // 유효성 검사 적용
   {
 
-    $name =  Auth::user()->id;
+
 
     Post::create([
       'title' => $request->title,
-      'name' =>  $request->name, // 지금은 하드 코딩, 회원관리 기능 구현 될때 까지는 
+      'name' =>  Auth::user()->name, // 지금은 하드 코딩, 회원관리 기능 구현 될때 까지는 
       'email' => $request->email,
       'contact' => $request->contact,
-      'user_id' => $name
+      'user_id' => Auth::user()->id
     ]);
 
     return to_route('posts.index');
@@ -83,5 +83,9 @@ class PostController extends Controller
   public function destroy(string $id)
   {
     //
+    // dd('asdfads');
+    $post = Post::find($id);
+    $post->delete();
+    return to_route('posts.index');
   }
 }
