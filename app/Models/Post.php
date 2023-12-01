@@ -9,6 +9,16 @@ class Post extends Model
 {
   use HasFactory;
 
+  protected $fillable = [
+    'title',
+    'name',
+    'email',
+    'contact',
+    'user_id'
+  ];
+
+
+
   // 1. user와 연동 
   public function user()
   {
