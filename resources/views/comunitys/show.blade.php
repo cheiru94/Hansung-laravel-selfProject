@@ -14,7 +14,7 @@
       <div class="Date w-[89px] text-black text-[21px] font-bold font-['Inter']">작성일자</div>
       <div class="DateContent w-[235px] text-black text-[21px] font-normal font-['Inter']">{{$post->created_at}}</div>
     </div>
-    <div class="Description w-[1363px] h-[auto] p-2.5 border-b-2">{{$post->content}}</div>
+    <div class="Description w-[1363px] h-[auto] p-2.5 border-b-2">{{$post->contact}}</div>
   </div>
 
   {{-- 댓글 추가 --}}
