@@ -83,9 +83,11 @@ class CommentController extends Controller
     $comment = Comment::find($comment_id);
     $comment->comment = $request->comment;
     $comment->save();
-    // return to_route('posts.show', $post_id);
-    return to_route('posts.show', ['post' => $post_id]);
+    /* 라우팅 방법 3개  */
+    // return to_route('posts.show', $post_id); // 넘겨줄 값이 1개이면 배열 안해도 된다, 변수명도 지정하지 않아도 된다.
+    return to_route('posts.show', ['post' => $post_id]); // 2개 이상일 경우 배열, 물론 1개도 가능
     // return redirect('/posts/' . $post_id); // redirect는 url 주소를 반환한다!!!
+
   }
 
   /**
