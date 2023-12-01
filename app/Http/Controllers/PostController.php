@@ -6,7 +6,6 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreComunityRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -20,7 +19,7 @@ class PostController extends Controller
 
     $topic = $request->topic; // 입력 받은 키워드 
     $search = $request->search; // 입력 받은 키워드 
-    $query = Post::search([$topic, $search]);
+    $query = Post::search([$topic, $search]); // Laravel은 자동으로 쿼리 빌더 인스턴스를 생성
 
     $posts = $query->select('id', 'name', 'title',  'created_at')
       ->orderByDesc('id')
