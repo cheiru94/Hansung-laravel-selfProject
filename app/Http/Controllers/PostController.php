@@ -16,7 +16,7 @@ class PostController extends Controller
   public function index()
   {
     //
-    $posts = Post::orderBy('created_at', 'desc')->get();
+    $posts = Post::orderBy('created_at', 'desc')->paginate(10);
     // $name = Post::find($posts->id)->user->name;
     return view('comunitys.index', compact('posts'));
   }
