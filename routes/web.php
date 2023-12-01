@@ -53,10 +53,10 @@ Route::get('/projects', function () {
 });
 
 /* 4. PostController - /posts */
-Route::resource('/posts', PostController::class);
+Route::resource('/posts', PostController::class)->middleware(['auth']);
 
 /* 5. Commentontroller - /post.comments  */
-Route::resource('/posts.comments', CommentController::class);
+Route::resource('/posts.comments', CommentController::class)->middleware(['auth']);
 
 
 
