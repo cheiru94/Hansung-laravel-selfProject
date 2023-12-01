@@ -68,7 +68,7 @@ class CommentController extends Controller
     // dd($chechedComment);
     $post = Post::find($postId);
     $comment = Comment::find($commentId);
-    return view('comunitys.edit', compact('comment', 'post', 'userComment', 'chechedComment'));
+    return view('comunitys.comment_edit', compact('comment', 'post', 'userComment', 'chechedComment'));
   }
 
   /**

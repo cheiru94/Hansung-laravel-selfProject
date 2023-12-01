@@ -1,9 +1,10 @@
 <x-hansung-layout >
 
-    {{-- 아래 여백 --}}
-    <div class="h-[80px]"> </div>
+  {{-- 아래 여백 --}}
+  <div class="h-[80px]"> </div>
 
-  <div class="Contact w-[1440px] h-[auto] p-2.5  mb-10 bg-white flex-col justify-start items-center gap-2.5 inline-flex ">
+  {{-- 게시글 --}}
+  <div class="Contact w-[1440px] h-[auto] p-2.5  mb-10 bg-white flex-col justify-start items-center gap-2.5 inline-flex relative">
     <div class="TitleDiv w-[1360px] h-[75px] mb-3 p-2.5 bg-white flex-col justify-start items-start gap-2.5 flex ">
       <div class="Title w-[1080px]  grow shrink basis-0 text-black text-[51px] font-normal font-['Inter']">{{$post->title}}</div>
     </div>
@@ -15,6 +16,26 @@
       <div class="DateContent w-[235px] text-black text-[21px] font-normal font-['Inter']">{{$post->created_at}}</div>
     </div>
     <div class="Description w-[1363px] h-[auto] p-2.5 border-b-2">{{$post->contact}}</div>
+    
+    {{-- 게시글 수정 삭제 --}}
+    @if(Auth::check() && $post->user_id === Auth::user()->id)
+      <div class="flex absolute right-[40px] bottom-[-50px]">
+
+        <form action="{{ route('posts.edit',['post'=>$post->id]) }}"  method="get" class="mr-[20px]">
+          {{-- <input type="hidden" name="userComment" value="{{$comment->comment}}">
+          <input type="hidden" id="chechedComment" name="chechedComment" value="{{$comment->id}}"> --}}
+          <button  type="submit" class="text-blue-500">게시글 수정</button>
+          <!-- value에 값을 변수로 박아ㄷ둔다 -->
+        </form> 
+
+        <form action="{{route('posts.destroy',['post'=>$post->id])}}" method="post">
+          @csrf
+          @method('delete')
+          <button type="submit" class="text-indigo-600  ">게시글 삭제</button>
+        </form>
+      </div>
+    @endif
+
   </div>
 
   {{-- 댓글 추가 --}}
@@ -26,7 +47,9 @@
     </form>
   </div>  
 
+{{-- 댓글 리스트 ~개  --}}
 <div class="px-8 my-[70px]" >댓글 리스트 ({{$post->comments->count()}}개) </div>
+
 
  {{-- 🟢🟢 댓글 🟢🟢 --}}
   <section class="text-gray-600 px-3 body-font overflow-hidden mb-6">
@@ -65,6 +88,7 @@
                     </form>
                 </div>
               @endif
+
             </div>
           </div>
         @endforeach
@@ -78,20 +102,3 @@
 </x-hansung-layout>
 
 
-{{-- <script>
-
-   function chechedComment() {
-    console.log('확인용');
-    const chechedComment = document.getElementById('chechedComment');
-   
-
-    const button = document.querySelector('button[data-comment]');
-    const selectedCommentId =  button.getAttribute('data-comment');
-    console.log(selectedCommentId);
-
-    chechedComment.value=selectedCommentId;
-
-
-  }
-  
-</script> --}}

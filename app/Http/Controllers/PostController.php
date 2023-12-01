@@ -67,6 +67,8 @@ class PostController extends Controller
   public function edit(string $id)
   {
     //
+    $post = Post::find($id);
+    return view('comunitys.post_edit', compact('post'));
   }
 
   /**
@@ -74,7 +76,14 @@ class PostController extends Controller
    */
   public function update(Request $request, string $id)
   {
-    //
+    $post = Post::find($id);
+
+    $post->title = $request->title;
+    $post->email = $request->email;
+    $post->contact = $request->contact;
+
+    $post->save();
+    return to_route('posts.index');
   }
 
   /**
@@ -86,6 +95,6 @@ class PostController extends Controller
     // dd('asdfads');
     $post = Post::find($id);
     $post->delete();
-    return to_route('posts.index');
+    return to_route('posts.index'); // 여기서 redirect로 하니 변경된 새로운 인스턴스르 자꾸 반환하더라 
   }
 }
