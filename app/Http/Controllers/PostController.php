@@ -13,11 +13,20 @@ class PostController extends Controller
   /**
    * Display a listing of the resource.
    */
-  public function index()
+  public function index(Request $request)
   {
     //
-    $posts = Post::orderBy('created_at', 'desc')->paginate(10);
-    // $name = Post::find($posts->id)->user->name;
+    // dd();
+
+    $topic = $request->topic; // 입력 받은 키워드 
+    $search = $request->search; // 입력 받은 키워드 
+    $query = Post::search([$topic, $search]);
+
+    $posts = $query->select('id', 'name', 'title',  'created_at')
+      ->orderByDesc('id')
+      ->paginate(10);
+
+
     return view('comunitys.index', compact('posts'));
   }
 

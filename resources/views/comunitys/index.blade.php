@@ -35,7 +35,7 @@
 
           {{-- 검색하기 input --}}
           <div class="w-full flex justify-center">
-            <form method="get" action="{{route('contacts.index')}}" class="mb-8"> {{-- 검색된 결과로 다시 index로 팅구자 --}}
+            <form method="get" action="{{route('posts.index')}}" class="mb-8"> {{-- 검색된 결과로 다시 index로 팅구자 --}}
               <label for="topic" class="leading-7 text-lg text-gray-600">검색 분류</label><br>
 
               <select name="topic" class=" w-[100px] h-[50px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;">
@@ -67,7 +67,7 @@
                 @foreach ($posts as $post)
                 <tr class="text-center">
                   <td class="border-t-2 border-gray-200 px-4 py-3"> {{$post->id}} </td>
-                  <td class="border-t-2 border-gray-200 px-4 py-3">{{$post->user->name}}</td>
+                  <td class="border-t-2 border-gray-200 px-4 py-3">{{$post->name}}</td>
                   <td class="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900"><a href="/posts/{{ $post->id}}">{{$post->title}}</a></td>
                   <td class="border-t-2 border-gray-200 px-4 py-3">{{$post->created_at}}</td>
                 </tr>
