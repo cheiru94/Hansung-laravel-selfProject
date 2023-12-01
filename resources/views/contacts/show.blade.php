@@ -1,9 +1,4 @@
-<x-app-layout>
-  <x-slot name="header">
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          상세화면
-      </h2>
-  </x-slot>
+<x-hansung-layout>
 
    
   <div class="py-12">
@@ -130,5 +125,5 @@
     }
   </script>
 
-</x-app-layout>
+</x-hansung-layout>
  
