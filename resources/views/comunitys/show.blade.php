@@ -52,7 +52,7 @@
 
 
  {{-- 🟢🟢 댓글 🟢🟢 --}}
-  <section class="text-gray-600 px-3 body-font overflow-hidden mb-6 h-[300px]">
+  <section class="text-gray-600 px-3 body-font overflow-hidden mb-6 ]">
     <div class="container px-5 ">
       <div class="-my-8 divide-y-2 divide-gray-100">
         
@@ -98,7 +98,7 @@
   </section>
 
   {{-- 아래 여백 --}}
-  {{-- <div class="h-[50px]"> </div> --}}
+  <div class="h-[50px]"> </div>
 
 </x-hansung-layout>
 
