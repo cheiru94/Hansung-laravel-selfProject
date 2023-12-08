@@ -38,7 +38,7 @@
               <form method="get" action="{{route('contacts.index')}}" class="mb-8"> {{-- 검색된 결과로 다시 index로 팅구자 --}}
                 <label for="topic" class="leading-7 text-lg text-gray-600">검색 분류</label><br>
                 
-                <select name="topic"  class=" w-[100px] h-[50px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;">
+                <select name="topic"  class=" w-[120px] h-[50px] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" style="border-radius: 5px;">
                   {{-- 숫자는 === 이 먹지 않는다..;;; --}}
                   {{-- <option value="name" {{ old('topic')==="name" ? 'selected' : ''}}  >성명</option>
                   <option value="title" {{ old('topic')==="title" ? 'selected' : ''}} >문의사항</option>
@@ -126,7 +126,7 @@
 
   {{-- 🟢 3. 푸터 --}}
   {{-- <div class="h-[50px]"> </div> --}}
-  <x-nav-footer />
+  <x-nav-footer class="fixed" />
 
 </body>
 </html>

@@ -59,7 +59,10 @@ Route::resource('/posts', PostController::class)->middleware(['auth']);
 Route::resource('/posts.comments', CommentController::class)->middleware(['auth']);
 
 
-
+// 프로젝트 
+Route::get('/hansung/work_link/project1', function () {
+  return view('hansung.work_link.project1');
+});
 // 🟢 작성 ↑↑↑↑↑↑↑↑↑↑↑↑
 
 
