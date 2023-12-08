@@ -6,18 +6,26 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreComunityRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
   /**
    * Display a listing of the resource.
    */
-  public function index()
+  public function index(Request $request)
   {
     //
-    $posts = Post::orderBy('created_at', 'desc')->get();
-    // $name = Post::find($posts->id)->user->name;
+    // dd();
+
+    $topic = $request->topic; // 입력 받은 키워드 
+    $search = $request->search; // 입력 받은 키워드 
+    $query = Post::search([$topic, $search]); // Laravel은 자동으로 쿼리 빌더 인스턴스를 생성
+
+    $posts = $query->select('id', 'name', 'title',  'created_at')
+      ->orderByDesc('id')
+      ->paginate(10);
+
+
     return view('comunitys.index', compact('posts'));
   }
 
