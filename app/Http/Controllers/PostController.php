@@ -43,12 +43,9 @@ class PostController extends Controller
    */
   public function store(Request $request) // 유효성 검사 적용
   {
-
-
-
     Post::create([
       'title' => $request->title,
-      'name' =>  Auth::user()->name, // 지금은 하드 코딩, 회원관리 기능 구현 될때 까지는 
+      'name' =>  Auth::user()->name,
       'email' => $request->email,
       'contact' => $request->contact,
       'user_id' => Auth::user()->id
@@ -104,10 +101,9 @@ class PostController extends Controller
    */
   public function destroy(string $id)
   {
-    //
     // dd('asdfads');
     $post = Post::find($id);
     $post->delete();
-    return to_route('posts.index'); // 여기서 redirect로 하니 변경된 새로운 인스턴스르 자꾸 반환하더라 
+    return to_route('posts.index'); // 여기서 redirect로 하니 변경된 새로운 인스턴스르 자꾸 반환하더라 (변경해도 게시글이 새로 생성되었음)
   }
 }

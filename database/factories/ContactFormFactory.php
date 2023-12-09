@@ -17,8 +17,8 @@ class ContactFormFactory extends Factory
    */
   public function definition(): array
   {
-    $types = ['house', 'villa', 'apartment', 'shop', 'supervision'];
-    $regions = ['남구', '중구', '북구', '북구', '동구', '울주군', '그 외 지역'];
+    $types = ['house', 'villa', 'apartment', 'shop', 'supervision']; // 의뢰 종류
+    $regions = ['남구', '중구', '북구', '북구', '동구', '울주군', '그 외 지역']; // 지역
     return [
       'title' => $this->faker->realText(50),
       'name' => $this->faker->name(20),

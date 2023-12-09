@@ -29,7 +29,7 @@ class ContactFormController extends Controller
     /* 🟡 페이지 네이션 하기 전 */
     // $contacts = ContactForm::select('id','name','title','region','created_at')->get();
 
-    /* 🟢 페이지 네이션 처리 */
+    /* 🟢 페이지 네이션 처리 후 */
     $contacts = $query->select('id', 'name', 'title', 'region', 'created_at')
       ->orderByDesc('id')
       ->paginate(10);

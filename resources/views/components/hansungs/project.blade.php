@@ -12,9 +12,9 @@
 
 <!-- 🟢 상단 nav 한성건축 탭 projects의 wokr 컴포넌트 🟢 -->
 <div class="p-4 md:w-1/3 sm:mb-0 mb-6  pb-[70px] ">
+
+  {{-- 1. image_path --}}
   <div class="rounded-lg h-64 overflow-hidden">
-    
-    {{-- 1. image_path --}}
     <img alt="content" class="object-cover object-center h-full w-full " src="{{$image_path}}" >
   </div>
 
@@ -31,4 +31,5 @@
       <path d="M5 12h14M12 5l7 7-7 7"></path>
     </svg>
   </a>
+  
 </div>

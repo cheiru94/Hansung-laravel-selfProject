@@ -21,13 +21,12 @@
     @if(Auth::check() && $post->user_id === Auth::user()->id)
     <div class="flex absolute right-[40px] bottom-[-50px]">
 
+      {{-- 수정 --}}
       <form action="{{ route('posts.edit',['post'=>$post->id]) }}" method="get" class="mr-[20px]">
-        {{-- <input type="hidden" name="userComment" value="{{$comment->comment}}">
-        <input type="hidden" id="chechedComment" name="chechedComment" value="{{$comment->id}}"> --}}
         <button type="submit" class="text-blue-500">게시글 수정</button>
-        <!-- value에 값을 변수로 박아ㄷ둔다 -->
       </form>
 
+      {{-- 삭제 --}}
       <form id="delete_{{$post->id}}" action="{{route('posts.destroy',['post'=>$post->id])}}" method="post">
         @csrf
         @method('delete')

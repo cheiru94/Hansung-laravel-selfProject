@@ -76,7 +76,7 @@
                             </div>
                           </div>
 
-                          {{-- 8. button --}}
+                          {{-- 7. button --}}
                           <div class="p-2 w-full mb-[10px]">
                               <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">수정 완료</button>
                           </div>

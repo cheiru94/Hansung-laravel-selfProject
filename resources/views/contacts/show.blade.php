@@ -1,10 +1,4 @@
 <x-hansung-layout>
-  {{-- <x-slot name="header">
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          상세화면
-      </h2>
-  </x-slot> --}}
-
    
   <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -28,6 +22,7 @@
                               </div>
                             </div>
                           </div>
+
                           {{-- 2. name --}}
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
@@ -37,6 +32,7 @@
                               </div>
                             </div>
                           </div>
+
                           {{-- 3. email --}}
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
@@ -46,6 +42,7 @@
                               </div>
                             </div>
                           </div>
+
                           {{-- 4. type 라디오 버튼 --}}
                           <div class="p-2 w-full mb-[10px]">
                             <div class="relative">
@@ -82,22 +79,22 @@
                           </div>
                       
 
-                          {{-- 8. button --}}
+                          {{-- 7. button --}}
                           <div class=" w-full flex  ">
-                            {{-- 8.1 뒤로가기 --}}
+                            {{-- 7.1 뒤로가기 --}}
                             <div class="p-2 w-full mb-[10px]">
                               <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a  class="hover:text-white text-decoration-none underline-none" href="{{route('contacts.index')}}">이전</a></button>
                             </div>
 
 
                             @if(Auth::check() && $contact->user_id === Auth::user()->id)
-                            {{-- 8.2 수정하기 --}}
+                            {{-- 7.2 수정하기 --}}
                             <div class="p-2 w-full mb-[10px]">
                               <form method="get" action="{{route('contacts.edit',['id' => $contact->id])}}">
                                 <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">수정</button>
                               </form>
                             </div>
-                            {{-- 8.3 삭제하기 --}}
+                            {{-- 7.3 삭제하기 --}}
                             <div class="p-2 w-full mb-[10px]">
                               <form id="delete_{{$contact->id}}"  method="post" action="{{route('contacts.destroy',['id' => $contact->id])}}">
                                 @csrf

@@ -39,7 +39,7 @@ class CommentController extends Controller
     $name =  Auth::user()->id;
     Comment::create([
       'comment' => $comment,
-      'user_id' =>  $name, // 지금은 하드 코딩, 회원관리 기능 구현 될때 까지는 
+      'user_id' =>  $name,
       'post_id' => $post_id
     ]);
 
