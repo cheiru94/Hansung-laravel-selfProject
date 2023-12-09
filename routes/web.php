@@ -59,10 +59,27 @@ Route::resource('/posts', PostController::class)->middleware(['auth']);
 Route::resource('/posts.comments', CommentController::class)->middleware(['auth']);
 
 
-// 프로젝트 
+// hansung projects 
 Route::get('/hansung/work_link/project1', function () {
   return view('hansung.work_link.project1');
 });
+Route::get('/hansung/work_link/project2', function () {
+  return view('hansung.work_link.project2');
+});
+Route::get('/hansung/work_link/project3', function () {
+  return view('hansung.work_link.project3');
+});
+Route::get('/hansung/work_link/project4', function () {
+  return view('hansung.work_link.project4');
+});
+Route::get('/hansung/work_link/project5', function () {
+  return view('hansung.work_link.project5');
+});
+Route::get('/hansung/work_link/project6', function () {
+  return view('hansung.work_link.project6');
+});
+
+
 // 🟢 작성 ↑↑↑↑↑↑↑↑↑↑↑↑
 
 
