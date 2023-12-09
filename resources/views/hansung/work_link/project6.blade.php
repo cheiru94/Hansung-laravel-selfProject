@@ -22,10 +22,10 @@
 
 <section class="text-gray-600 body-font">
   <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-    <img class="lg:w-1/2 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="/imgs/projects/1.jpg">
+    <img class="lg:w-1/2 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="/imgs/projects/6.jpg">
     <div class="text-center lg:w-2/3 w-full">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">고향(故郷)</h1>
-      <p class="mb-8 leading-relaxed">고향은 어린 시절을 보낸 곳이며, 그곳에서의 첫 경험과 추억이 쌓여있습니다. 따라서 고향을 테마로 한 건축물은 따뜻함과 편안함을 주는 디자인이 필요합니다. 자연스러운 재료와 색상을 사용하여 고향의 풍경을 연상시키는 디자인을 추구하고, 공간 구성에서도 친숙하고 안정감 있는 느낌을 주도록 합니다.</p>
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">열정(熱情)</h1>
+      <p class="mb-8 leading-relaxed">열정은 강렬한 사랑이나 열망을 의미합니다. 열정을 테마로 한 건축물은 강렬하고 도전적인 디자인이 필요합니다. 대담한 색상 사용, 독특한 형태의 구조 등을 통해 열정적인 분위기를 연출합니다.</p>
       
     </div>
   </div>

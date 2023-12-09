@@ -22,10 +22,10 @@
 
 <section class="text-gray-600 body-font">
   <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-    <img class="lg:w-1/2 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="/imgs/projects/1.jpg">
+    <img class="lg:w-1/2 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="/imgs/projects/5.jpeg">
     <div class="text-center lg:w-2/3 w-full">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">고향(故郷)</h1>
-      <p class="mb-8 leading-relaxed">고향은 어린 시절을 보낸 곳이며, 그곳에서의 첫 경험과 추억이 쌓여있습니다. 따라서 고향을 테마로 한 건축물은 따뜻함과 편안함을 주는 디자인이 필요합니다. 자연스러운 재료와 색상을 사용하여 고향의 풍경을 연상시키는 디자인을 추구하고, 공간 구성에서도 친숙하고 안정감 있는 느낌을 주도록 합니다.</p>
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">희망(希望)</h1>
+      <p class="mb-8 leading-relaxed">희망은 미래에 대한 긍정적인 기대입니다. 희망을 테마로 한 건축물은 밝고 활기찬 디자인이 필요합니다. 통창을 통한 자연광 활용, 쾌적한 공간 배치 등을 통해 긍정적인 에너지를 느낄 수 있는 환경을 만듭니다.</p>
       
     </div>
   </div>
@@ -41,7 +41,7 @@
   </div>
   <div class="container px-5 pb-24 mx-auto fle justify-center sm:flex-nowrap flex-wrap">
     <div class="lg:w-full h-[500px] md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-      <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=ko&amp;q=경상북도+경주시+양남면+명주길/data=!4m6!3m5!1s0x3567b3e9bc192f5b:0x52132fff73c82a4c!8m2!3d35.7417087!4d129.3878024!16s%2Fg%2F119wqxh9h?hl=ko&entry=ttu&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" style="filter:  opacity(0.8);"></iframe>
+      <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=ko&amp;q=부산광역시/data=!4m6!3m5!1s0x3568eb6de823cd35:0x35d8cb74247108a7!8m2!3d35.2100142!4d129.0688702!16zL20vMGh2N2w?hl=ko&entry=ttu&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" style="filter:  opacity(0.8);"></iframe>
       
     </div>
   </div>
