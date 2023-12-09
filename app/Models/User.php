@@ -44,16 +44,20 @@ class User extends Authenticatable
   ];
 
   /* 🟢 관계 정의 🟢 */
+
+  // 1. ContactForm와 연동 
   public function contactForms()
   {
     return $this->hasOne(ContactForm::class);
   }
 
+  // 2. Post와 연동 
   public function posts()
   {
     return $this->hasOne(Post::class);
   }
 
+  // 3. Comment와 연동 
   public function commments()
   {
     return $this->hasOne(Comment::class);
