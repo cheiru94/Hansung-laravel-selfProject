@@ -121,7 +121,7 @@
 
   {{-- 🟢 3. 푸터 --}}
   {{-- <div class="h-[50px]"> </div> --}}
-  <x-nav-footer class="fixed" />
+  <x-nav-footer  />
 
 </body>
 </html>

@@ -28,7 +28,7 @@
         <div class="w-[663px] h-[97px] [text-shadow:0px_4px_4px_#00000040] [font-family:'Inter-Bold',Helvetica] font-bold text-[85px] whitespace-nowrap relative text-white tracking-[0] leading-[normal]">
           한성 건축사사무소
         </div>
-        <p class="w-[461px] h-[63px] [font-family:'Inter-Regular',Helvetica] font-normal text-[32px] relative text-white tracking-[0] leading-[normal]">
+        <p class="w-[470px] h-[63px] [font-family:'Inter-Regular',Helvetica] font-normal text-[32px] relative text-white tracking-[0] leading-[normal]">
           모두가 꿈꾸는 아름다운 집의 시작
         </p>
         <div class="relative w-[191px] h-[28px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-[20px] tracking-[0] leading-[normal]">
